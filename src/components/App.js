@@ -6,7 +6,7 @@ import SignOut from "./SignOut";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
-function App() {
+function App() { // medium set the signin page to be the landing page 
   return (
     <Router>
         <Switch>
@@ -16,7 +16,7 @@ function App() {
           <Route path='/signOunt'>
               <SignOut />
           </Route>
-          <Route path='/'>
+          <Route path='/'> 
               <AppControl />
           </Route>
         </Switch>
