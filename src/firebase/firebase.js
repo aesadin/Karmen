@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 import 'firebase/firestore';
 import firebase from 'firebase/app'; // from medium
 import 'firebase/auth'; // from medium
-//import 'firebase/database';
+import 'firebase/database';
 
 
 const firebaseConfig = {
