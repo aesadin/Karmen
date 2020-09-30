@@ -1,5 +1,5 @@
 import React from 'react';
-import PostControl from "./AppControl";
+import AppControl from "./AppControl";
 import Header from "./Header";
 import Signin from "./Signin";
 import SignOut from "./SignOut";
@@ -8,10 +8,19 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <React.Fragment>
-      <Header />
-      <PostControl />
-    </React.Fragment>
+    <Router>
+        <Switch>
+          <Route path='/signin'>
+            <Signin />
+          </Route>
+          <Route path='/signOunt'>
+              <SignOut />
+          </Route>
+          <Route path='/'>
+              <AppControl />
+          </Route>
+        </Switch>
+    </Router>
   );
 }
 

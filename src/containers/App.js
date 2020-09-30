@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "./Header";
-import FundControl from "./FundControl";
+import Header from "../Header";
+import FundControl from "../FundControl";
 
 
 import '../App.css';
