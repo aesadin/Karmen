@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from "../components/Header";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import FundControl from "../FundControl";
+import AppControl from "../components/AppControl";
 
 import Signin from '../components/Signin';
 // import Signout from '../components/Signout';
@@ -30,7 +30,7 @@ class App extends Component {
           <Route path="/signin" exact component={Signin} />
           {/* <Route path="/signout" exact component={Signout} /> */}
           <Route path="/dashboard" component={withAuthentication(Dashboard)} />
-          <Route path="/" component={FundControl} />
+          <Route path="/" component={AppControl} />
         </Switch>
       </Router>
     );
