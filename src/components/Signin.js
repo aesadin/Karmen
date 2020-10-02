@@ -2,29 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Layout from '../containers/Layout';
+import buttonList from '../initialButtonList';
 import SocialButtonList from './SocialButtonList';
 import { auth } from '../firebase';
 
-const buttonList = {
-  // github: {
-  //   visible: true,
-  //   provider: () => {
-  //     const provider = auth.githubOAuth();
-  //     provider.addScope('user');
-  //     return provider;
-  //   }
-  // },
-  twitter: {
-    visible: true,
-    provider: () => auth.twitterOAuth()
-  },
-  facebook: {
-    visible: true,
-    provider: () => auth.facebookOAuth()
-  }
-};
 
 class Signin extends Component {
+
+  
   componentDidMount() {
     auth.getAuth().onAuthStateChanged(user => {
       if (user) {

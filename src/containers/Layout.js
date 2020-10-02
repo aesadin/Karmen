@@ -24,7 +24,7 @@ const Layout = ({ children, contentCenter }) => { // add Header component here i
         <p>
           Made with{' '}
           <span role="img" aria-label="heart emoji">
-            ??
+            ❤️
           </span>{' '}
           by Allison Sadin
         </p>

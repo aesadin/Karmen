@@ -9,7 +9,7 @@ import Dashboard from '../components/Dashboard';
 import withAuthentication from '../containers/withAuthentication';
 
 
-import '../App.css';
+import './App.css';
 
 // function App() {
 //   return (
@@ -20,16 +20,16 @@ import '../App.css';
 //   );
 // }
 
-export default App;
+// export default App;
 
 class App extends Component { // decide if you want NON-signed in user to be able to head to dashboard which might be like fund list except with no functionality? just displays random fundraisers
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/signin" exact component={Signin} />
+          <Route path="/" exact component={Signin} />
           {/* <Route path="/signout" exact component={Signout} /> */}
-          <Route path="/" component={withAuthentication(Dashboard)} />
+          <Route path="/dashboard" component={withAuthentication(Dashboard)} />
           <Route path="/appControl" component={AppControl} />
         </Switch>
       </Router>
