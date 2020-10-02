@@ -1,7 +1,7 @@
 // import * as firebase from 'firebase';
 // import 'firebase/firestore';
 
-// https://carmen-6dd02.firebaseapp.com/__/auth/handler
+
 
 // const firebaseConfig = {
 //   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
