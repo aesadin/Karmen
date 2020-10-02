@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Layout from '../containers/Layout';
 import buttonList from '../initialButtonList';
 import SocialButtonList from './SocialButtonList';
-import { auth } from '../firebase';
+import { auth } from '../firebase/auth'; // added /auth to path, this was not in the instructions, but it makes more sense? idk
 
 
 class Signin extends Component {

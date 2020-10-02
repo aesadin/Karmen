@@ -1,3 +1,5 @@
+// this is a Higher Order Component, if we wrap pages in it in out App.js, then those pages will need authentication before being loaded.
+
 import React, { Component } from 'react';
 import Delay from 'react-delay';
 
