@@ -9,7 +9,7 @@ import { auth } from '../firebase';
 
 class Signin extends Component {
 
-  
+
   componentDidMount() {
     auth.getAuth().onAuthStateChanged(user => {
       if (user) {

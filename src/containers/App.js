@@ -1,26 +1,15 @@
 import React, { Component } from 'react';
 import Header from "../components/Header";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AppControl from "../components/AppControl";
+import About from "../components/About";
 
 import Signin from '../components/Signin';
-// import Signout from '../components/Signout';
 import Dashboard from '../components/Dashboard';
 import withAuthentication from '../containers/withAuthentication';
 
 
 import './App.css';
 
-// function App() {
-//   return (
-//     <React.Fragment>
-//       <Header />
-//       <FundControl />
-//     </React.Fragment>
-//   );
-// }
-
-// export default App;
 
 class App extends Component { // decide if you want NON-signed in user to be able to head to dashboard which might be like fund list except with no functionality? just displays random fundraisers
   render() {
@@ -30,7 +19,7 @@ class App extends Component { // decide if you want NON-signed in user to be abl
           <Route path="/" exact component={Signin} />
           {/* <Route path="/signout" exact component={Signout} /> */}
           <Route path="/dashboard" component={withAuthentication(Dashboard)} />
-          <Route path="/appControl" component={AppControl} />
+          <Route path="/about" component={About} />
         </Switch>
       </Router>
     );

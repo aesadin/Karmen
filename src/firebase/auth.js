@@ -1,4 +1,5 @@
 import firebase from './firebase';
+import { auth } from '.';
 
 export const getAuth = () => {
   return firebase.auth();
@@ -11,3 +12,4 @@ export const twitterOAuth = () => {
 export const facebookOAuth = () => {
   return new firebase.firebase_.auth.FacebookAuthProvider();
 };
+
