@@ -9,7 +9,7 @@ function Header() {
   const auth = firebase.auth();
   let currentlyVisibleLink = null;
   if (auth.currentUser != null) {
-    currentlyVisibleLink = <Link to="/signOut"> Sign out</Link>
+    currentlyVisibleLink = <Link to="/logout"> Sign out</Link>
   } else {
     currentlyVisibleLink = <Link to="/signin"> Sign in</Link>
   }

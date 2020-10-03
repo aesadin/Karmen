@@ -3,7 +3,8 @@ import AddFundForm from './AddFundForm';
 import FundList from './FundList';
 import FundDetails from './FundDetails';
 import EditFundForm from './EditFundForm';
-import Header from './Header';
+import Header from "./Header";
+import Layout from "./Layout"
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import { withFirestore, isLoaded } from 'react-redux-firebase'
@@ -63,24 +64,23 @@ class AppControl extends React.Component {
       const auth = this.props.firebase.auth(); 
       if (!isLoaded(auth)) {
         return (
-          <React.Fragment>
-          <div class="app-control">
-            <h1>Loading...</h1>
-          </div>
-          </React.Fragment>
+          <Layout>
+            <div class="app-control">
+              <h1>Loading...</h1>
+            </div>
+          </Layout>
         )
       }
       if ((isLoaded(auth)) && (auth.currentUser == null)) {
         return (
-          <React.Fragment>
-            <Header /> 
+          <Layout>
             <div className="landing-pg-control">
               <h1 className="landing-pg">Welcome to The Flash!</h1>
                 <p className="landing-pg">Make fundraisers and study for your technical interview!</p>
               <br/>
               <h3 className="landing-pg">Please Sign in or Sign Up to view the fundraiser queue.</h3>
             </div>
-          </React.Fragment>
+          </Layout>
         )
       } 
 
@@ -97,12 +97,11 @@ class AppControl extends React.Component {
           currentlyVisibleState = <FundList onFundSelection = {this.handleChangingSelectedFund} onAddFundClick = {this.handleAddClick} />
         }
         return (
-          <React.Fragment>
-            <Header /> 
+          <Layout>
             <div className="app-control">
               {currentlyVisibleState}
             </div>
-          </React.Fragment>
+          </Layout>
         );
       }
     }

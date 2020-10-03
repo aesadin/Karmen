@@ -24,5 +24,6 @@ Fund.propTypes = {
   description: PropTypes.string,
   url: PropTypes.string,
   whenDetailsClicked: PropTypes.func
-
 }
+
+export default Fund;

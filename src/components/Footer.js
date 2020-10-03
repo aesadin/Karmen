@@ -10,8 +10,8 @@ function Footer() {
     return(
         <footer className="mt-5">
             <Container fluid={true}>
-                <Row className="border-top justify-content-between p-1">
-                  <Col className="p-2 d-flex justify-content-end" sm={7}>
+                <Row className="border-top justify-content-between p-0">
+                  <Col className="p-0 d-flex justify-content-end" sm={7}>
                         <p>This site was made with <span role="img" aria-label="heart emoji"> ❤️ </span> by Allison Sadin.</p>
                   </Col>
                 </Row>

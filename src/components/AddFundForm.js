@@ -22,7 +22,7 @@ function AddFundForm (props) {
     <React.Fragment>
       <div className='form-styles-container'>
         <ReusableForm
-          formSubmissionHandler = {addFormToFirestore}
+          formSubmissionHandler = {addFundToFirestore}
           buttonText = "Add Fundraiser" />
       </div>
     </React.Fragment>

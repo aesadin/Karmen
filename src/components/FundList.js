@@ -14,7 +14,6 @@ function FundList(props){
   if(isLoaded(fundraisers)) {
     return (
       <React.Fragment>
-        {/* <Layout> */}
           <div className="fund-grid-layout">
           {fundraisers.map((fund) => {
             return <div className='fund'>
@@ -28,12 +27,12 @@ function FundList(props){
             </div>
           })}
           </div>
-          <div>
+          <div className='footer'>
             <button onClick={props.onAddFundClick}>Add Fundraiser</button>
           </div>
         {/* </Layout> */}
       </React.Fragment>
-    );s
+    );
   } else {
     return (
       <React.Fragment>
@@ -47,3 +46,5 @@ FundList.propTypes = {
   onFundSelection: PropTypes.func,
   onAddFundClick: PropTypes.func
 };
+
+export default FundList;

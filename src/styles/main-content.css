@@ -1,0 +1,59 @@
+.landing-pg-control {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.landing-pg{
+  margin: 0 .2em;
+}
+
+button p:hover{
+  opacity: 60%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* .flashcard-container{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+} */
+
+.flashcard-grid-layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 45vh 45vh 45vh 45vh 45vh 45vh;
+  width: 100vw;
+  height: 75vh;
+  overflow: scroll; 
+  background-color: #e6e6e6;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.flashcard-grid-layout button{
+  align-self: flex-end;
+}
+
+.flashcard {
+  /* border: 2px solid #005450; */
+  display: flex;
+  margin: 1em;
+  flex-direction: column;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: .6em;
+  padding: 1em;
+  /* word-wrap: break-word; */
+}
+
+.flashcard > button {
+  justify-self: flex-end;
+}

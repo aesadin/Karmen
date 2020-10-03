@@ -5,37 +5,36 @@ import Layout from "./Layout"
 import '../styles/index.css';
 import '../styles/login.css';
 
-const Signin = ({history}) => {  // history is a key router term!
+const Signup = ({history}) => {  // history is a key router term!
 
-  function doSignIn(event) {
+  function doSignUp(event) {
     event.preventDefault();
-    const email = event.target.signinEmail.value;
-    const password = event.target.signinPassword.value;
-    firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
       history.push('/')
     }).catch(function(error) {
       alert(error.message) 
     });
   }
 
-
   return (
     <Layout>
       <div className='login-content-container'>
         <div className='login-content'>
-          <h1>Sign In</h1>
-          <form onSubmit={doSignIn}>
+          <h1>Sign up</h1>
+          <form onSubmit={doSignUp}>
             <input
               type='text'
-              name='signinEmail'
+              name='email'
               placeholder='email' />
             <br/>
             <input
               type='password'
-              name='signinPassword'
+              name='password'
               placeholder='Password' />
             <br/>
-            <button type='submit'>Sign in</button>
+            <button type='submit'>Sign up</button>
           </form>
         </div>
       </div>
@@ -43,4 +42,4 @@ const Signin = ({history}) => {  // history is a key router term!
   );
 }
 
-export default withRouter(Signin);
+export default withRouter(Signup);

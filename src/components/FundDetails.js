@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from 'styled-components';
-// import Header from './Header';
 import '../styles/index.css';
 import '../styles/details.css';
 
@@ -10,8 +8,8 @@ function FundDetails(props) {
 
   return (
     <React.Fragment>
-    <div>
-      <div>
+    <div className='details-content-container'>
+      <div className='details-content'>
         <h3>{fund.fundTitle}</h3>
         <p>{fund.description}</p>
         <p><a href={fund.url}>Check It Out</a></p>
@@ -21,7 +19,7 @@ function FundDetails(props) {
   )
 }
 
-FlashcardDetails.propTypes = {
+FundDetails.propTypes = {
   fund: PropTypes.object
 };
 

@@ -2,3 +2,11 @@ p {
   font-size: 10px;
   position: center;
 }
+
+footer {
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  position: fixed;
+  
+}
