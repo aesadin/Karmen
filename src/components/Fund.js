@@ -9,10 +9,20 @@ function Fund(props) {
     <React.Fragment>
       <div>
         <div onClick = {() => sethidden(!hidden)}>
-          {hidden ? <h4></h4> : <h4>This will be fundraiser information soon! will this call a document? I guess so...</h4>}
+        <h3>{props.fundTitle}</h3>
+        <p><a href={props.url}>Link to Fundraiser</a></p>
+          {hidden ? <h4></h4> : <h4>{props.description}</h4>}
         </div>
         <p><button onClick = {() => props.whenDetailsClicked(props.id)}></button></p>
       </div>
     </React.Fragment>
   )
+}
+
+Fund.propTypes = {
+  fundTitle: PropTypes.string,
+  description: PropTypes.string,
+  url: PropTypes.string,
+  whenDetailsClicked: PropTypes.func
+
 }
