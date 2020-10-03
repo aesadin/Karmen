@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import firebase from "firebase/app";
+import '../styles/header.css';
+import '../styles/index.css';
 
 function Header() {
 

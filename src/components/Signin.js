@@ -3,7 +3,7 @@ import firebase from "firebase/app";
 import { withRouter } from 'react-router-dom';
 import Layout from "./Layout"
 import '../styles/index.css';
-import '../styles/signin.css';
+import '../styles/login.css';
 
 const Signin = ({history}) => {  // history is a key router term!
 
