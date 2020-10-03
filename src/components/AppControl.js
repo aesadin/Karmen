@@ -1,112 +1,113 @@
-// import React from 'react';
-// import AddFlashcardForm from './AddFlashcardForm';
-// import FlashcardList from './FlashcardList';
-// import FlashcardDetails from './FlashcardDetails';
-// import EditFlashcardForm from './EditFlashcardForm';
-// import Header from './Header';
-// import { connect } from 'react-redux';
-// import PropTypes from "prop-types";
-// import { withFirestore, isLoaded } from 'react-redux-firebase'
-// import '../styles/index.css';
-// import '../styles/main-content.css';
-// import '../styles/footer.css';
+import React from 'react';
+import AddFundForm from './AddFundForm';
+import FundList from './FundList';
+import FundDetails from './FundDetails';
+import EditFundForm from './EditFundForm';
+import Header from './Header';
+import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { withFirestore, isLoaded } from 'react-redux-firebase'
+import '../styles/index.css';
+import '../styles/main-content.css';
+import '../styles/footer.css';
 
-// class AppControl extends React.Component {
+class AppControl extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     selectedFlashcard: null,
-  //     visibleOnPage: "flashcardList" // set default state to showing the flashcardList because it will trigger the else statement in the render method
-  //     }
-  //   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedFund: null,
+      visibleOnPage: "fundList" // set default state to showing the fundList because it will trigger the else statement in the render method
+      }
+    };
 
-  //   handleAddClick = () => { 
-  //     this.setState({visibleOnPage: "addFlashcard"})
-  //   }
+    handleAddClick = () => { 
+      this.setState({visibleOnPage: "addFund"})
+    }
 
-  //   handleAddingFlashcard = () => {
-  //     this.setState({
-  //       visibleOnPage: "flashcardList"
-  //     });
-  //   }
+    handleAddingFund = () => {
+      this.setState({
+        visibleOnPage: "fundList"
+      });
+    }
 
-  //   handleDeletingFlashcard = (id) => {
-  //     this.props.firestore.delete({collection: 'flashcards', doc: id});
-  //     this.setState({selectedFlashcard: null});
-  //   }
+    handleDeletingFund = (id) => {
+      this.props.firestore.delete({collection: 'fundraisers', doc: id});
+      this.setState({selectedFund: null});
+    }
 
-  //   handleChangingSelectedFlashcard = (id) => { // pass flashcard id
-  //     this.props.firestore.get({collection: 'flashcards', doc: id}).then((flashcard) => { //grab the flashcard with that id from the firestore collection, then pass that flashcard as a parameter
-  //       const firestoreFlashcard = { // create variable
-  //         term: flashcard.get("term"), // grab the values to these properties
-  //         definition: flashcard.get("definition"),
-  //         id: flashcard.id
-  //       }
-  //       this.setState({selectedFlashcard: firestoreFlashcard}); // set the state to the selected flash card with those new properties
-  //     });
-  //   }
+    handleChangingSelectedFund = (id) => { // pass fund id
+      this.props.firestore.get({collection: 'fundraisers', doc: id}).then((fund) => { //grab the fund with that id from the firestore collection, then pass that fund as a parameter
+        const firestoreFund = { // create variable
+          fundTitle: fund.get("fundTitle"), // grab the values to these properties
+          description: fund.get("definition"),
+          url: fund.get("url"),
+          id: fund.id
+        }
+        this.setState({selectedFund: firestoreFund}); // set the state to the selected flash card with those new properties
+      });
+    }
     
-  //   handleEditClick = () => { // this method is called on when the user clicks the edit button in details
-  //     this.setState({visibleOnPage: 'editing'}); // this triggers the if statement in the render to show the editflashcard form
-  //   }
+    handleEditClick = () => { // this method is called on when the user clicks the edit button in details
+      this.setState({visibleOnPage: 'editing'}); // this triggers the if statement in the render to show the editfund form
+    }
 
-  //   handleEditingFlashcard = () => {
-  //     this.setState({
-  //       visibleOnPage: "flashcardList",
-  //       selectedFlashcard: null
-  //     });
-  //   }
+    handleEditingFund = () => {
+      this.setState({
+        visibleOnPage: "fundList",
+        selectedFund: null
+      });
+    }
 
-  //   render(){
-  //     const auth = this.props.firebase.auth(); 
-  //     if (!isLoaded(auth)) {
-  //       return (
-  //         <React.Fragment>
-  //         <div class="app-control">
-  //           <h1>Loading...</h1>
-  //         </div>
-  //         </React.Fragment>
-  //       )
-  //     }
-  //     if ((isLoaded(auth)) && (auth.currentUser == null)) {
-  //       return (
-  //         <React.Fragment>
-  //           <Header /> 
-  //           <div className="landing-pg-control">
-  //             <h1 className="landing-pg">Welcome to The Flash!</h1>
-  //               <p className="landing-pg">Make flashcards and study for your technical interview!</p>
-  //             <br/>
-  //             <h3 className="landing-pg">Please Sign in or Sign Up to view the flashcard queue.</h3>
-  //           </div>
-  //         </React.Fragment>
-  //       )
-  //     } 
+    render(){
+      const auth = this.props.firebase.auth(); 
+      if (!isLoaded(auth)) {
+        return (
+          <React.Fragment>
+          <div class="app-control">
+            <h1>Loading...</h1>
+          </div>
+          </React.Fragment>
+        )
+      }
+      if ((isLoaded(auth)) && (auth.currentUser == null)) {
+        return (
+          <React.Fragment>
+            <Header /> 
+            <div className="landing-pg-control">
+              <h1 className="landing-pg">Welcome to The Flash!</h1>
+                <p className="landing-pg">Make fundraisers and study for your technical interview!</p>
+              <br/>
+              <h3 className="landing-pg">Please Sign in or Sign Up to view the fundraiser queue.</h3>
+            </div>
+          </React.Fragment>
+        )
+      } 
 
-  //     if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      if ((isLoaded(auth)) && (auth.currentUser != null)) {
 
-  //       let currentlyVisibleState = null;
-  //       if (this.state.visibleOnPage === "editing") { // if we are editing then show the edit flashcard form
-  //         currentlyVisibleState = <EditFlashcardForm flashcard = {this.state.selectedFlashcard} onEditFlashcard = {this.handleEditingFlashcard} />
-  //       } else if (this.state.selectedFlashcard != null) { // if the selected flashcard is not empty, then show the selected flashcard's detail page
-  //         currentlyVisibleState = <FlashcardDetails flashcard = {this.state.selectedFlashcard} onClickingDelete = {this.handleDeletingFlashcard} onClickingEdit = {this.handleEditClick} />
-  //       } else if (this.state.visibleOnPage === "addFlashcard") { // 
-  //         currentlyVisibleState = <AddFlashcardForm onFlashcardCreation = {this.handleAddingFlashcard} />
-  //       } else { // otherwise show the list of flashcards
-  //         currentlyVisibleState = <FlashcardList onFlashcardSelection = {this.handleChangingSelectedFlashcard} onAddFlashcardClick = {this.handleAddClick} />
-  //       }
-  //       return (
-  //         <React.Fragment>
-  //           <Header /> 
-  //           <div className="app-control">
-  //             {currentlyVisibleState}
-  //           </div>
-  //         </React.Fragment>
-  //       );
-  //     }
-  //   }
-// }
+        let currentlyVisibleState = null;
+        if (this.state.visibleOnPage === "editing") { // if we are editing then show the edit fund form
+          currentlyVisibleState = <EditFundForm fund = {this.state.selectedFund} onEditFund = {this.handleEditingFund} />
+        } else if (this.state.selectedFund != null) { // if the selected fund is not empty, then show the selected fund's detail page
+          currentlyVisibleState = <FundDetails fund = {this.state.selectedFund} onClickingDelete = {this.handleDeletingFund} onClickingEdit = {this.handleEditClick} />
+        } else if (this.state.visibleOnPage === "addFund") { // 
+          currentlyVisibleState = <AddFundForm onFundCreation = {this.handleAddingFund} />
+        } else { // otherwise show the list of fundraisers
+          currentlyVisibleState = <FundList onFundSelection = {this.handleChangingSelectedFund} onAddFundClick = {this.handleAddClick} />
+        }
+        return (
+          <React.Fragment>
+            <Header /> 
+            <div className="app-control">
+              {currentlyVisibleState}
+            </div>
+          </React.Fragment>
+        );
+      }
+    }
+}
 
-// export default withFirestore(AppControl);
+export default withFirestore(AppControl);
 
 
