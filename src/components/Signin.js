@@ -1,32 +1,74 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import firebase from "firebase/app";
+import { withRouter } from 'react-router-dom';
+import Layout from "./Layout"
+import '../styles/index.css';
+import '../styles/signin.css';
 
-import Layout from '../containers/Layout';
-import buttonList from '../initialButtonList';
-import SocialButtonList from './SocialButtonList';
-import { auth } from '../firebase/auth'; // added /auth to path, this was not in the instructions, but it makes more sense? idk
+const Signin = ({history}) => {  // history is a key router term!
 
-
-class Signin extends Component {
-
-
-  componentDidMount() {
-    auth.getAuth().onAuthStateChanged(user => {
-      if (user) {
-        this.props.history.push('/dashboard');
-      }
+  function doSignUp(event) {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+      console.log("successfully signed up!");
+    }).catch(function(error) {
+      alert(error.message) 
     });
   }
 
-  render() {
-    return (
-      <Layout contentCenter={true}>
-        <p>Connect With</p>
-        <SocialButtonList buttonList={buttonList} auth={auth.getAuth} />
-        <Link to="/about">About</Link>
-      </Layout>
-    );
+  function doSignIn(event) {
+    event.preventDefault();
+    const email = event.target.signinEmail.value;
+    const password = event.target.signinPassword.value;
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+      history.push('/')
+    }).catch(function(error) {
+      alert(error.message) 
+    });
   }
+
+
+  return (
+    <Layout>
+      <div className='login-content-container'>
+        <div className='login-content'>
+          <h1>Sign up</h1>
+          <form onSubmit={doSignUp}>
+            <input
+              type='text'
+              name='email'
+              placeholder='email' />
+            <br/>
+            <input
+              type='password'
+              name='password'
+              placeholder='Password' />
+            <br/>
+            <button type='submit'>Sign up</button>
+          </form>
+        </div>
+
+        <div className='login-content'>
+          <h1>Sign In</h1>
+          <form onSubmit={doSignIn}>
+            <input
+              type='text'
+              name='signinEmail'
+              placeholder='email' />
+            <br/>
+            <input
+              type='password'
+              name='signinPassword'
+              placeholder='Password' />
+            <br/>
+            <button type='submit'>Sign in</button>
+          </form>
+        </div>
+      </div>
+    </Layout>
+  );
 }
 
-export default Signin;
+export default withRouter(Signin);

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 // import AddFlashcardForm from './AddFlashcardForm';
 // import FlashcardList from './FlashcardList';
 // import FlashcardDetails from './FlashcardDetails';
@@ -6,12 +6,12 @@ import React from 'react';
 // import Header from './Header';
 // import { connect } from 'react-redux';
 // import PropTypes from "prop-types";
-import { withFirestore, isLoaded } from 'react-redux-firebase'
+// import { withFirestore, isLoaded } from 'react-redux-firebase'
 // import '../styles/index.css';
 // import '../styles/main-content.css';
 // import '../styles/footer.css';
 
-class AppControl extends React.Component {
+// class AppControl extends React.Component {
 
   // constructor(props) {
   //   super(props);
@@ -105,8 +105,8 @@ class AppControl extends React.Component {
   //       );
   //     }
   //   }
-}
+// }
 
-export default withFirestore(AppControl);
+// export default withFirestore(AppControl);
 
 

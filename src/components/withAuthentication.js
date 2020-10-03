@@ -1,40 +1,40 @@
 // this is a Higher Order Component, if we wrap pages in it in out App.js, then those pages will need authentication before being loaded.
 
-import React, { Component } from 'react';
-import Delay from 'react-delay';
+// import React, { Component } from 'react';
+// import Delay from 'react-delay';
 
-import { auth } from '../firebase';
+// import { auth } from '../firebase';
 
-export default WrappedComponent => {
-  class WithAuthentication extends Component {
-    state = {
-      providerData: []
-    };
+// export default WrappedComponent => {
+//   class WithAuthentication extends Component {
+//     state = {
+//       providerData: []
+//     };
 
-    componentDidMount() {
-      auth.getAuth().onAuthStateChanged(user => {
-        if (user) {
-          this.setState({ providerData: user.providerData });
-        } else {
-          console.info('Must be authenticated');
-          this.props.history.push('/');
-        }
-      });
-    }
+//     componentDidMount() {
+//       auth.getAuth().onAuthStateChanged(user => {
+//         if (user) {
+//           this.setState({ providerData: user.providerData });
+//         } else {
+//           console.info('Must be authenticated');
+//           this.props.history.push('/');
+//         }
+//       });
+//     }
 
-    render() {
-      return this.state.providerData.length > 0 ? (
-        <WrappedComponent
-          {...this.props}
-          providerData={this.state.providerData}
-        />
-      ) : (
-        <Delay wait={250}>
-          <p>Loading...</p>
-        </Delay>
-      );
-    }
-  }
+//     render() {
+//       return this.state.providerData.length > 0 ? (
+//         <WrappedComponent
+//           {...this.props}
+//           providerData={this.state.providerData}
+//         />
+//       ) : (
+//         <Delay wait={250}>
+//           <p>Loading...</p>
+//         </Delay>
+//       );
+//     }
+//   }
 
-  return WithAuthentication;
-};
+//   return WithAuthentication;
+// };

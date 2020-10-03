@@ -1,0 +1,30 @@
+.login-content{
+  background-color: white;
+  padding: 1em 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  width: 20vw;
+  height: 40vh;
+}
+
+.login-content-container {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 80vh;
+  align-items: center;
+  justify-items: center;
+}
+
+input {
+  margin: .2em;
+  border: 1px solid #005450;
+  border-radius: .1em;
+}
+
+button {
+  margin: .2em;
+}

@@ -13,20 +13,9 @@ function Header() {
   }
 
 
-// function Header() {
-
-//   const [currentlyVisibleLink, setCurrentlyVisibleLink] = useState(<Link to="/signin"> Sign in</Link>);
-
-//   const auth = firebase.auth();
-//   if (auth.currentUser != null) {
-//     setCurrentlyVisibleLink(currentlyVisibleLink == <Link to="/signOut"> Sign out</Link>)
-//   } 
-
-
   return (
     <React.Fragment>
       <div className="header-grid-layout">
-        <h1>The Flash</h1>
         <p><button><Link to="/">Home</Link></button></p>
         <p><button>{currentlyVisibleLink}</button></p>
       </div>
