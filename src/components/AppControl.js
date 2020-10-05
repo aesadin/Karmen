@@ -76,10 +76,7 @@ class AppControl extends React.Component {
         return (
           <Layout>
             <div className="landing-pg-control">
-              <h1 className="landing-pg">Welcome to The Flash!</h1>
-                <p className="landing-pg">Make fundraisers and study for your technical interview!</p>
-              <br/>
-              <h3 className="landing-pg">Please Sign in or Sign Up to view the fundraiser queue.</h3>
+              <h1 className="landing-pg">Karmen</h1>
             </div>
           </Layout>
         )

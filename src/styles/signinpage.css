@@ -1,0 +1,22 @@
+.signinpage-container {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .signin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .signup-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }

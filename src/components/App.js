@@ -13,17 +13,17 @@ function App (){
   return ( 
     <Router>
         <Switch>
-          {/* <Route path='/signin'>
-            <Signin />
-          </Route> */}
-          <Route path='/signin'>
+        <Route path='/signin'>
             <SignInPage />
+        </Route>
+        <Route path='/'>
+              <AppControl />
+          </Route>
+          <Route path='/signup'>
+            <Signup />
           </Route>
           <Route path='/logout'>
               <Logout />
-          </Route>
-          <Route path='/'>
-              <AppControl />
           </Route>
         </Switch>
     </Router>

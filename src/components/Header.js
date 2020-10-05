@@ -19,7 +19,7 @@ function Header() {
     <React.Fragment>
       <div className="header-grid-layout">
         <p><button><Link to="/">Home</Link></button></p>
-        <p><button><Link to="/signup"> Sign up</Link></button></p>
+        <p><button><Link to="/Signup">About</Link></button></p>
         <p><button>{currentlyVisibleLink}</button></p>
       </div>
     </React.Fragment>

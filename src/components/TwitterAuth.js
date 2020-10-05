@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import firebase from "firebase/app";
+import TwitterIcon from "./TwitterIcon"
 import { withRouter } from 'react-router-dom';
-import FacebookIcon from "./FacebookIcon"
-import '../styles/fbloginbutton.css';
+import '../styles/twitterloginbutton.css';
 import "firebase/auth";
 
-class FacebookAuth extends Component {
+class TwitterAuth extends Component {
   constructor(props) {
     super(props);
 
@@ -22,7 +22,7 @@ class FacebookAuth extends Component {
   }
 
   handleLogin() {
-    var provider = new firebase.auth.FacebookAuthProvider();
+    var provider = new firebase.auth.TwitterAuthProvider();
     firebase
       .auth()
       .signInWithPopup(provider)
@@ -42,13 +42,13 @@ class FacebookAuth extends Component {
   }
   render() {
     return (
-      <div class="login-content-container">
+      <div class="login-content-container-for-twitter">
         <button onClick={this.handleLogin}>
-        <FacebookIcon /><span>Sign in with Facebook</span>
+        <TwitterIcon /><span>Sign in with Twitter</span>
         </button>
-      </div> 
+      </div>
     );
   }
 }
 
-export default FacebookAuth;
+export default TwitterAuth;

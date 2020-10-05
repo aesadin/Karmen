@@ -22,7 +22,6 @@ const Signup = ({history}) => {  // history is a key router term!
     <Layout>
       <div className='login-content-container'>
         <div className='login-content'>
-          <h1>Sign up</h1>
           <form onSubmit={doSignUp}>
             <input
               type='text'
@@ -44,4 +43,4 @@ const Signup = ({history}) => {  // history is a key router term!
   );
 }
 
-export default withRouter(Signup);
+export default Signup;
