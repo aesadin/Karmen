@@ -1,8 +1,10 @@
 import React from "react";
 import AppControl from "./AppControl";
-import Signin from "./Signin";
+import SignInPage from "./SignInPage";
 import Signup from "./Signup";
+import Signin from "./Signin";
 import Logout from "./Logout";
+import '../styles/App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -11,11 +13,11 @@ function App (){
   return ( 
     <Router>
         <Switch>
-          <Route path='/signin'>
+          {/* <Route path='/signin'>
             <Signin />
-          </Route>
-          <Route path='/signup'>
-            <Signup />
+          </Route> */}
+          <Route path='/signin'>
+            <SignInPage />
           </Route>
           <Route path='/logout'>
               <Logout />

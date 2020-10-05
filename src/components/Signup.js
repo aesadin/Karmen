@@ -29,12 +29,14 @@ const Signup = ({history}) => {  // history is a key router term!
               name='email'
               placeholder='email' />
             <br/>
+            <br/>
             <input
               type='password'
               name='password'
               placeholder='Password' />
             <br/>
-            <button type='submit'>Sign up</button>
+            <br/>
+            <button type="submit" class="btn btn-outline-danger">Sign up</button>
           </form>
         </div>
       </div>

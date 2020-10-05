@@ -1,8 +1,12 @@
-.header-grid-layout {
-  display: grid;
-  grid-template-columns: 80% 1fr 1fr;
-  grid-template-rows: 12vh;
-  align-items: center;
-  padding: 0 1em;
-  border-bottom: 1px solid #005450;
-}
+
+  .header-grid-layout {
+    display: grid;
+    grid-template-columns: 80% 1fr 1fr;
+    grid-template-rows: 12vh;
+    align-items: center;
+    padding: 0 1em;
+    border-bottom: 1px solid #005450;
+  }
+
+
+  

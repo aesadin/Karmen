@@ -4,6 +4,7 @@ import FundList from './FundList';
 import FundDetails from './FundDetails';
 import EditFundForm from './EditFundForm';
 import Header from "./Header";
+import Hero from "./Hero";
 import Layout from "./Layout"
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";

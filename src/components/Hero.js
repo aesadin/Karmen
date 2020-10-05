@@ -1,40 +1,23 @@
-// import React from 'react';
-// import Jumbotron from 
+import React from 'react';
+import styled from 'styled-components';
 
-// function Hero(props) {
-
-//   const width = window.innerWidth;
-//   const height = window.innerHeight;
+function Hero() {
   
-//   const style = {
-//     'position': 'fixed',
-//     'top': 0, 
-//     'left': 0,
-//     'min-width': '100%',
-//     'min-height': '100%' 
-//   }
+  const StyleImage = styled.img`
+    'position': 'fixed',
+    'top': 0, 
+    'left': 0,
+    'min-width': '100%',
+    'min-height': '100%' 
+  `;
 
-//   return(
-//     <div style={style}>
-//       <img src={`src/img/newYork.png/${width}/${height}?image=${props.number}`} style={style}/>
-//     </div>
+  return(
+    <div>
+      <StyleImage>
+        <img src="../assets/newYork.png"/>
+      </StyleImage>
+    </div>
 
-//   );
-
-
-// }
-
-
-
-// const App = () => {
-//   return(
-//     <div>
-//       <Hero name='hero' number={1054} />
-//     </div>
-//   )
-// }
-
-// ReactDOM.render(
-//   <App />,
-//   document.getElementById('app')
-// );
+  );
+}
+export default Hero;

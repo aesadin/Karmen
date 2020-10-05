@@ -2,6 +2,7 @@ import React from "react";
 import firebase from "firebase/app";
 import { withRouter } from 'react-router-dom';
 import Layout from "./Layout"
+import Container from 'react-bootstrap/Container';
 import '../styles/index.css';
 import '../styles/login.css';
 
@@ -20,26 +21,27 @@ const Signin = ({history}) => {  // history is a key router term!
 
 
   return (
-    <Layout>
+    // <Layout>
       <div className='login-content-container'>
         <div className='login-content'>
-          <h1>Sign In</h1>
           <form onSubmit={doSignIn}>
             <input
               type='text'
               name='signinEmail'
               placeholder='email' />
             <br/>
+            <br/>
             <input
               type='password'
               name='signinPassword'
               placeholder='Password' />
             <br/>
-            <button type='submit'>Sign in</button>
+            <br/>
+            <button type="submit">Sign in</button>
           </form>
         </div>
       </div>
-    </Layout>
+    // </Layout>
   );
 }
 

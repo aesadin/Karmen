@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import firebase from "firebase/app";
-import Header from './Header';
+import FacebookAuth from "./FacebookAuth";
+import Layout from "./Layout"
 import '../styles/index.css';
 import '../styles/logout.css';
 
@@ -18,15 +19,14 @@ function Logout() {
   }
 
     return (
-      <div className='logout-content-container'>
-        <React.Fragment>
+      <Layout>
+        <div className='logout-content-container'>
           <div className='logout-content'>
-          {/* <Header />  */}
           <h1>Sign Out</h1>
-          {loggedIn ? <button onClick={doSignOut}>Sign out</button> : <h4>You have successfully signed out!</h4>}
+          {loggedIn ? <button onClick={doSignOut} type="submit">Sign out</button> : <h4>You have successfully signed out!</h4>}
           </div>
-        </React.Fragment>
-      </div>
+        </div>
+      </Layout>
     )
 }
 

@@ -12,11 +12,10 @@
 
 .login-content-container {
   height: 90vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 80vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
 }
 
 input {
@@ -25,6 +24,6 @@ input {
   border-radius: .1em;
 }
 
-button {
+/* button {
   margin: .2em;
-}
+} */
