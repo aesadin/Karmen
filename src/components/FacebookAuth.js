@@ -23,14 +23,17 @@ class FacebookAuth extends Component {
 
 
   handleLogin({history}) {
-    var provider = new firebase.auth.FacebookAuthProvider();
+    const provider = new firebase.auth.FacebookAuthProvider();
+    const userBirthday = provider.addScope('user_birthday');
+    // provider.addScope('user_photoURL');
     firebase
       .auth()
       .signInWithPopup(provider)
       .then(function(result) {
-        var token = result.credential.accessToken;
-        var user = result.user;
-        console.log(user);
+        const token = result.credential.accessToken;
+        const currentUser = result.user;
+        console.log(currentUser.providerData[0].providerId);
+        console.log(provider);
         history.push('/')
         // ...
       })

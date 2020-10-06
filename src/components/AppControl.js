@@ -8,6 +8,7 @@ import Hero from "./Hero";
 import Layout from "./Layout"
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
+import firebase from "firebase/app";
 import { withFirestore, isLoaded } from 'react-redux-firebase'
 import '../styles/index.css';
 import '../styles/main-content.css';
@@ -19,7 +20,8 @@ class AppControl extends React.Component {
     super(props);
     this.state = {
       selectedFund: null,
-      visibleOnPage: "fundList" // set default state to showing the fundList because it will trigger the else statement in the render method
+      visibleOnPage: "fundList", // set default state to showing the fundList because it will trigger the else statement in the render method
+      fundVerified: false
       }
     };
 
@@ -33,8 +35,16 @@ class AppControl extends React.Component {
       });
     }
 
-    handleAddVerify = (id) => {
-      
+    handleAddVerify = () => {
+      const currentUser = firebase.auth().currentUser;
+      if (currentUser.providerData[0].providerId != null) {
+        this.setState({fundVerified: true})
+        console.log("you did it!")
+      } else {
+        alert("Sorry, you're not authorized to verify!")
+        console.log("nope!");
+      }
+
     }
 
     handleDeletingFund = (id) => {

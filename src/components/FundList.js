@@ -18,14 +18,13 @@ function FundList(props){
           {fundraisers.map((fund) => {
             return <div className='fund'>
               <Fund
-            whenDetailsClicked = {props.onFundSelection}
+            whenVerifyClicked = {props.onVerifyClick}
             fundTitle={fund.fundTitle}
             city={fund.city}
             description={fund.description}
             url={fund.url}
             id={fund.id}
-            key={fund.id}
-            />
+            key={fund.id}/>
             </div>
           })}
           </div>

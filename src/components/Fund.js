@@ -8,15 +8,15 @@ import '../styles/main-content.css';
 function Fund(props) {
 
   const user = firebase.auth().currentUser;
-  const [disabled, setDisabled] = useState(true);
+  const [showResults, setShowResults] = useState(false)
 
-  function isDisabled () {
-    if (user.providerData[0].providerId === "twitter.com") {
-        setDisabled(false);
-    } else {
-      setDisabled(disabled);
+  const showVerify = () => {
+    if(fundVerified) {
+      setShowResults(true);
     }
   }
+  
+
 
   return(
     <>
@@ -31,7 +31,8 @@ function Fund(props) {
               <hr/>
               <a href={props.url}>Link to Fundraiser</a>
               <hr/>
-              <p><button onClick={props.onVerifyClick} class="btn btn-outline-primary btn-sm" disabled={isDisabled()}>Verify</button></p>
+              <p><button onClick={() => props.whenVerifyClicked(props.id)} class="btn btn-outline-primary btn-sm" >Verify</button></p>
+              {/* {props.verified} */}
             </Card.Text>
           </Card.Body>
       </Card>
@@ -44,7 +45,8 @@ Fund.propTypes = {
   city: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
-  onVerifyClick: PropTypes.func
+  // verified: PropTypes.string,
+  whenVerifyClicked: PropTypes.func
 }
 
 export default Fund;
