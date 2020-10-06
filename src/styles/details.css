@@ -13,6 +13,7 @@
 .details-content-container {
   height: 90vh;
   display: flex;
+  overflow: scroll; 
   justify-content: center;
   align-items: center;
 }

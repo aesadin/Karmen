@@ -33,6 +33,10 @@ class AppControl extends React.Component {
       });
     }
 
+    handleAddVerify = (id) => {
+      
+    }
+
     handleDeletingFund = (id) => {
       this.props.firestore.delete({collection: 'fundraisers', doc: id});
       this.setState({selectedFund: null});
@@ -93,7 +97,7 @@ class AppControl extends React.Component {
         } else if (this.state.visibleOnPage === "addFund") { // 
           currentlyVisibleState = <AddFundForm onFundCreation = {this.handleAddingFund} />
         } else { // otherwise show the list of fundraisers
-          currentlyVisibleState = <FundList onFundSelection = {this.handleChangingSelectedFund} onAddFundClick = {this.handleAddClick} />
+          currentlyVisibleState = <FundList onFundSelection = {this.handleChangingSelectedFund} onAddFundClick = {this.handleAddClick} onVerifyClick = {this.handleAddVerify}/>
         }
         return (
           <Layout>

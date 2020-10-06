@@ -6,15 +6,6 @@
   text-align: center;
 }
 
-/* .app-control {
-  text-align: center;
-  background-image: url("../assets/newYork.png");
-  position: fixed;
-  min-width: 100%;
-  min-height: 100%;
-  background-size: cover;
-  background-position: center;
-} */
 
 .landing-pg{
   margin: 0 .2em;
@@ -36,9 +27,10 @@ a {
 
 .fund-grid-layout{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 45vh 45vh 45vh 45vh 45vh 45vh;
-  width: 100vw;
+  width: 75vw;
   height: 75vh;
   overflow: scroll; 
   background-color: #e6e6e6;
@@ -49,19 +41,22 @@ a {
   background: transparent;
 }
 
+.scroll-card {
+  overflow: scroll;
+}
+
 .fund-grid-layout button{
   align-self: flex-end;
 }
 
 .fund {
-  /* border: 2px solid #005450; */
   display: flex;
   margin: 1em;
   flex-direction: column;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   border-radius: .6em;
   padding: 1em;
-  /* word-wrap: break-word; */
+  
 }
 
 .fund > button {
@@ -69,9 +64,9 @@ a {
 }
 
 .footer {
-  height: 12vh;
-  width: 100vw;
-  background-color: #fbfafd;
+  /* height: 12vh; */
+  width: 75vw;
+  background-color: #e6e6e6;
   display: flex;
   align-items: center;
   justify-content: center;

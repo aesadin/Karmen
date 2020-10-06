@@ -19,7 +19,7 @@ function FundList(props){
             return <div className='fund'>
               <Fund
             whenDetailsClicked = {props.onFundSelection}
-            fundTitle={fund.term}
+            fundTitle={fund.fundTitle}
             city={fund.city}
             description={fund.description}
             url={fund.url}
@@ -30,7 +30,7 @@ function FundList(props){
           })}
           </div>
           <div className='footer'>
-            <button onClick={props.onAddFundClick}>Add Fundraiser</button>
+            <p><button onClick={props.onAddFundClick}>Add Fundraiser</button></p>
           </div>
 
       </React.Fragment>
