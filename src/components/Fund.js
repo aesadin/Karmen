@@ -7,14 +7,14 @@ import '../styles/main-content.css';
 
 function Fund(props) {
 
-  const user = firebase.auth().currentUser;
-  const [showResults, setShowResults] = useState(false)
+  // const user = firebase.auth().currentUser;
+  // const [showResults, setShowResults] = useState(false)
 
-  const showVerify = () => {
-    if(fundVerified) {
-      setShowResults(true);
-    }
-  }
+  // const showVerify = () => {
+  //   if(fundVerified) {
+  //     setShowResults(true);
+  //   }
+  // }
   
 
 
