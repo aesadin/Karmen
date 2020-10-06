@@ -20,17 +20,19 @@ function FundList(props){
               <Fund
             whenDetailsClicked = {props.onFundSelection}
             fundTitle={fund.term}
+            city={fund.city}
             description={fund.description}
             url={fund.url}
             id={fund.id}
-            key={fund.id}/>
+            key={fund.id}
+            />
             </div>
           })}
           </div>
           <div className='footer'>
             <button onClick={props.onAddFundClick}>Add Fundraiser</button>
           </div>
-        {/* </Layout> */}
+
       </React.Fragment>
     );
   } else {

@@ -11,7 +11,12 @@ function ReusableForm(props) {
           <input 
             type='text'
             name='fundTitle'
-            placeholder='Fund Title' />
+            placeholder='Fundraiser Title' />
+            <br/>
+            <input 
+            type='text'
+            name='city'
+            placeholder='City' />
             <br/>
           <input 
             type='text'
@@ -19,8 +24,8 @@ function ReusableForm(props) {
             placeholder='Brief description' />
             <br/>
             <input 
-            type='url'
-            name='link'
+            type='text'
+            name='url'
             placeholder='https://example.com' />
             <br/>
           <button type='submit'>{props.buttonText}</button>

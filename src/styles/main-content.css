@@ -34,7 +34,7 @@ a {
   overflow: hidden;
 } */
 
-.flashcard-grid-layout{
+.fund-grid-layout{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 45vh 45vh 45vh 45vh 45vh 45vh;
@@ -49,11 +49,11 @@ a {
   background: transparent;
 }
 
-.flashcard-grid-layout button{
+.fund-grid-layout button{
   align-self: flex-end;
 }
 
-.flashcard {
+.fund {
   /* border: 2px solid #005450; */
   display: flex;
   margin: 1em;
@@ -64,6 +64,15 @@ a {
   /* word-wrap: break-word; */
 }
 
-.flashcard > button {
+.fund > button {
   justify-self: flex-end;
+}
+
+.footer {
+  height: 12vh;
+  width: 100vw;
+  background-color: #fbfafd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

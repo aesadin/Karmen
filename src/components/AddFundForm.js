@@ -13,6 +13,7 @@ function AddFundForm (props) {
     return firestore.collection('fundraisers').add(
       {
         fundTitle: event.target.fundTitle.value,
+        city: event.target.city.value,
         description: event.target.description.value,
         url: event.target.url.value
       }

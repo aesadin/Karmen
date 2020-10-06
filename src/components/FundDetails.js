@@ -11,6 +11,7 @@ function FundDetails(props) {
     <div className='details-content-container'>
       <div className='details-content'>
         <h3>{fund.fundTitle}</h3>
+        <p>This fundraiser is located in {fund.city}</p>
         <p>{fund.description}</p>
         <p><a href={fund.url}>Check It Out</a></p>
       </div>

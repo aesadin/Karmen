@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from "firebase/app";
 import { withRouter } from 'react-router-dom';
 import FacebookIcon from "./FacebookIcon"
+import { useHistory } from "react-router-dom";
 import '../styles/fbloginbutton.css';
 import "firebase/auth";
 
@@ -15,13 +16,13 @@ class FacebookAuth extends Component {
       message: "",
     };
 
-
     if (!firebase.apps.length) {
       firebase.initializeApp(this.props.firebaseConfig);
     }
   }
 
-  handleLogin() {
+
+  handleLogin({history}) {
     var provider = new firebase.auth.FacebookAuthProvider();
     firebase
       .auth()
@@ -30,6 +31,7 @@ class FacebookAuth extends Component {
         var token = result.credential.accessToken;
         var user = result.user;
         console.log(user);
+        history.push('/')
         // ...
       })
       .catch(function(error) {
@@ -43,7 +45,7 @@ class FacebookAuth extends Component {
   render() {
     return (
       <div class="login-content-container">
-        <button onClick={this.handleLogin}>
+        <button onClick={this.handleLogin} size="lg">
         <FacebookIcon /><span>Sign in with Facebook</span>
         </button>
       </div> 
@@ -52,3 +54,4 @@ class FacebookAuth extends Component {
 }
 
 export default FacebookAuth;
+

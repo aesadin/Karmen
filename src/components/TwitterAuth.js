@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from "firebase/app";
 import TwitterIcon from "./TwitterIcon"
+import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import { withRouter } from 'react-router-dom';
 import '../styles/twitterloginbutton.css';
 import "firebase/auth";
@@ -44,7 +45,7 @@ class TwitterAuth extends Component {
     return (
       <div class="login-content-container-for-twitter">
         <button onClick={this.handleLogin}>
-        <TwitterIcon /><span>Sign in with Twitter</span>
+          <TwitterIcon /><span>Sign in with Twitter</span>
         </button>
       </div>
     );

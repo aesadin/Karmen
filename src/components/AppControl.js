@@ -42,6 +42,7 @@ class AppControl extends React.Component {
       this.props.firestore.get({collection: 'fundraisers', doc: id}).then((fund) => { //grab the fund with that id from the firestore collection, then pass that fund as a parameter
         const firestoreFund = { // create variable
           fundTitle: fund.get("fundTitle"), // grab the values to these properties
+          city: fund.get("city"),
           description: fund.get("definition"),
           url: fund.get("url"),
           id: fund.id
@@ -81,7 +82,7 @@ class AppControl extends React.Component {
           </Layout>
         )
       } 
-
+        // formSubmissionHandler from reusable form
       if ((isLoaded(auth)) && (auth.currentUser != null)) {
 
         let currentlyVisibleState = null;

@@ -2,6 +2,7 @@ import React from "react";
 import firebase from "firebase/app";
 import { withRouter } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import Layout from "./Layout";
 import FacebookButton from "./TwitterAuth";
 import Signin from "./Signin";
@@ -14,12 +15,8 @@ const SignInPage = () => (
   <Layout>
     <div class="signinpage-container">
       <h1>Sign In</h1>
-      <div class="signup-button">
-        <button><Link to="/Signup">Sign Up</Link></button>
-      </div>
-      <div class="signin-button">
-        <button><Link to="/signin">Sign In with Email</Link></button>
-      </div>
+      {/* <Signup /> */}
+      <Signin />
       <FacebookAuth />
       <TwitterAuth />
     </div>

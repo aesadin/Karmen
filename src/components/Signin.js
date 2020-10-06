@@ -1,6 +1,7 @@
 import React from "react";
 import firebase from "firebase/app";
 import { withRouter } from 'react-router-dom';
+import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import Layout from "./Layout"
 import Container from 'react-bootstrap/Container';
 import '../styles/index.css';
@@ -37,7 +38,7 @@ const Signin = ({history}) => {  // history is a key router term!
               placeholder='Password' />
             <br/>
             <br/>
-            <button type="submit">Sign in</button>
+            <button type="submit"><MDBIcon icon="envelope" className="pr-1" />Sign in</button>
           </form>
         </div>
       </div>
