@@ -9,20 +9,22 @@ import Layout from "./Layout"
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import firebase from "firebase/app";
-import { withFirestore, isLoaded } from 'react-redux-firebase'
+import { useFirestoreConnect, withFirestore, isLoaded } from 'react-redux-firebase'
 import '../styles/index.css';
 import '../styles/main-content.css';
 import '../styles/footer.css';
 
 class AppControl extends React.Component {
 
+
   constructor(props) {
     super(props);
     this.state = {
       selectedFund: null,
       visibleOnPage: "fundList", // set default state to showing the fundList because it will trigger the else statement in the render method
-      fundVerified: false
+      fundVerified: false,
       }
+      
     };
 
     handleAddClick = () => { 
@@ -36,9 +38,11 @@ class AppControl extends React.Component {
     }
 
     handleAddVerify = () => {
+
       const currentUser = firebase.auth().currentUser;
       if (currentUser.providerData[0].providerId != null) {
-        this.setState({fundVerified: true})
+        // this.setState({fundVerified: true})
+        return 
         console.log("you did it!")
       } else {
         alert("Sorry, you're not authorized to verify!")

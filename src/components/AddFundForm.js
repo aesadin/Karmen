@@ -15,7 +15,8 @@ function AddFundForm (props) {
         fundTitle: event.target.fundTitle.value,
         city: event.target.city.value,
         description: event.target.description.value,
-        url: event.target.url.value
+        url: event.target.url.value,
+        verified: "<p>&#11088;</p>"
       }
     );
   }

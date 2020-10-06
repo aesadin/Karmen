@@ -2,17 +2,29 @@ import React, { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import PropTypes from "prop-types";
 import firebase from "firebase/app";
+import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 import '../styles/main-content.css';
 
 
 function Fund(props) {
-
+  // useFirestoreConnect([
+  //   { collection: 'fundraisers' }
+  // ]);
   // const user = firebase.auth().currentUser;
-  // const [showResults, setShowResults] = useState(false)
+  // // const [showResults, setShowResults] = useState(false)
 
   // const showVerify = () => {
   //   if(fundVerified) {
-  //     setShowResults(true);
+  //     setShowResults(true)
+  //     firestore.collection('fundraisers')
+  //     .where(doc.verified, '==', '<p>&#11088;</p>')
+  //     .get()
+  //     .then(function(querySnapShot) {
+  //       const grabStar = querySnapShot.docs.map((doc) => {
+  //         return {...doc.data(), id: doc.id}
+  //       });
+  //       console.log(grabStar);
+  //     })
   //   }
   // }
   
@@ -32,7 +44,7 @@ function Fund(props) {
               <a href={props.url}>Link to Fundraiser</a>
               <hr/>
               <p><button onClick={() => props.whenVerifyClicked(props.id)} class="btn btn-outline-primary btn-sm" >Verify</button></p>
-              {/* {props.verified} */}
+              <p>{props.verified}</p>
             </Card.Text>
           </Card.Body>
       </Card>
@@ -45,7 +57,7 @@ Fund.propTypes = {
   city: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
-  // verified: PropTypes.string,
+  verified: PropTypes.string,
   whenVerifyClicked: PropTypes.func
 }
 
