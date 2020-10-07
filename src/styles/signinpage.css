@@ -1,5 +1,5 @@
 .signinpage-container {
-    
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +15,7 @@
   }
 
   .signup-button {
-    padding-top: 20px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;

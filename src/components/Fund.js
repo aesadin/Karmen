@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Card';
 import PropTypes from "prop-types";
 import firebase from "firebase/app";
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
@@ -7,33 +8,26 @@ import '../styles/main-content.css';
 
 
 function Fund(props) {
-  // useFirestoreConnect([
-  //   { collection: 'fundraisers' }
-  // ]);
-  // const user = firebase.auth().currentUser;
-  // // const [showResults, setShowResults] = useState(false)
+// show function doesnt work
+  const [hidden, setHidden] = useState(true)
+  const currentUser = firebase.auth().currentUser;
+  let currentlyVisible = null;
+  
 
-  // const showVerify = () => {
-  //   if(fundVerified) {
-  //     setShowResults(true)
-  //     firestore.collection('fundraisers')
-  //     .where(doc.verified, '==', '<p>&#11088;</p>')
-  //     .get()
-  //     .then(function(querySnapShot) {
-  //       const grabStar = querySnapShot.docs.map((doc) => {
-  //         return {...doc.data(), id: doc.id}
-  //       });
-  //       console.log(grabStar);
-  //     })
-  //   }
+  // function doVerify() {
+    if (currentUser.providerData[0].providerId == "facebook.com" || currentUser.providerData[0].providerId == "twitter.com" ) {
+      // setHidden(!hidden)
+      currentlyVisible = <p>&#11088;</p>
+      console.log(currentlyVisible)
+    } else {
+      currentlyVisible = null
+    }
   // }
   
 
 
   return(
-    <>
       <Card className="scroll-card">
-        {/* <Card.Img variant='top'src={props.imgUrl} /> */}
           <Card.Body>
             <Card.Title>{props.fundTitle}</Card.Title>
             <Card.Subtitle><em>{props.city}</em></Card.Subtitle>
@@ -43,13 +37,16 @@ function Fund(props) {
               <hr/>
               <a href={props.url}>Link to Fundraiser</a>
               <hr/>
-              <p><button onClick={() => props.whenVerifyClicked(props.id)} class="btn btn-outline-primary btn-sm" >Verify</button></p>
-              <p>{props.verified}</p>
+              <div>
+                <p><button onClick={() => Fund(props.id) }type="submit" class="btn btn-outline-primary btn-sm">Verify</button></p>
+                {currentlyVisible}
+                {/* {hidden ? <p></p> : <p>{currentlyVisible}</p>} */}
+              </div>
             </Card.Text>
           </Card.Body>
       </Card>
-    </>
   );
+
 }
 
 Fund.propTypes = {
@@ -57,8 +54,8 @@ Fund.propTypes = {
   city: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
-  verified: PropTypes.string,
-  whenVerifyClicked: PropTypes.func
+  // verified: PropTypes.string,
+  // whenVerifyClicked: PropTypes.func
 }
 
 export default Fund;

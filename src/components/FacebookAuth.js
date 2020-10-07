@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import FacebookIcon from "./FacebookIcon"
 import { useHistory } from "react-router-dom";
 import '../styles/fbloginbutton.css';
+import '../styles/SocialButtonList.css';
 import "firebase/auth";
 
 class FacebookAuth extends Component {
@@ -47,10 +48,10 @@ class FacebookAuth extends Component {
   }
   render() {
     return (
-      <div class="login-content-container">
-        <button onClick={this.handleLogin} size="lg">
-        <FacebookIcon /><span>Sign in with Facebook</span>
-        </button>
+      <div>
+        <div onClick={this.handleLogin} >
+        <FacebookIcon />
+        </div>
       </div> 
     );
   }
@@ -58,3 +59,4 @@ class FacebookAuth extends Component {
 
 export default FacebookAuth;
 
+//<span>Sign in with Facebook</span>

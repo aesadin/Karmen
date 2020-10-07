@@ -14,7 +14,7 @@ function Hero() {
   return(
     <div>
       <StyleImage>
-        <img src="../assets/newYork.png"/>
+        <img src="../assets/cityScape.png"/>
       </StyleImage>
     </div>
 

@@ -23,6 +23,7 @@ function FundList(props){
             city={fund.city}
             description={fund.description}
             url={fund.url}
+            verified={fund.verified}
             id={fund.id}
             key={fund.id}/>
             </div>

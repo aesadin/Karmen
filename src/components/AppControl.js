@@ -39,15 +39,15 @@ class AppControl extends React.Component {
 
     handleAddVerify = () => {
 
-      const currentUser = firebase.auth().currentUser;
-      if (currentUser.providerData[0].providerId != null) {
-        // this.setState({fundVerified: true})
-        return 
-        console.log("you did it!")
-      } else {
-        alert("Sorry, you're not authorized to verify!")
-        console.log("nope!");
-      }
+      // const currentUser = firebase.auth().currentUser;
+      // if (currentUser.providerData[0].providerId != null) {
+      //   // this.setState({fundVerified: true})
+      //   return 
+      //   console.log("you did it!")
+      // } else {
+      //   alert("Sorry, you're not authorized to verify!")
+      //   console.log("nope!");
+      // }
 
     }
 

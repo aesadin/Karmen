@@ -43,13 +43,19 @@ class TwitterAuth extends Component {
   }
   render() {
     return (
-      <div class="login-content-container-for-twitter">
-        <button onClick={this.handleLogin}>
-          <TwitterIcon /><span>Sign in with Twitter</span>
-        </button>
+      <div>
+        <div onClick={this.handleLogin}>
+          <TwitterIcon />
+        </div>
       </div>
     );
   }
 }
 
 export default TwitterAuth;
+
+{/* <div class="login-content-container-for-twitter">
+        <a onClick={this.handleLogin}>
+          <TwitterIcon />
+        </a>
+      </div> */}

@@ -4,6 +4,8 @@ import SignInPage from "./SignInPage";
 import Signup from "./Signup";
 import Signin from "./Signin";
 import Logout from "./Logout";
+import Layout from "./Layout"
+import Hero from "./Hero"
 import '../styles/App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

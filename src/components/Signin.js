@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import Layout from "./Layout"
 import Container from 'react-bootstrap/Container';
+import '../styles/SocialButtonList.css';
 import '../styles/index.css';
 import '../styles/login.css';
 
@@ -23,22 +24,24 @@ const Signin = ({history}) => {  // history is a key router term!
 
   return (
     // <Layout>
-      <div className='login-content-container'>
-        <div className='login-content'>
+      <div>
+        <div className="btn--twitter">
           <form onSubmit={doSignIn}>
-            <input
-              type='text'
-              name='signinEmail'
-              placeholder='email' />
-            <br/>
-            <br/>
-            <input
-              type='password'
-              name='signinPassword'
-              placeholder='Password' />
-            <br/>
-            <br/>
-            <button type="submit"><MDBIcon icon="envelope" className="pr-1" />Sign in</button>
+            <label>
+              <a type="submit"><MDBIcon icon="envelope" className="pr-1" />Sign in</a>
+              <select>
+                <input
+                  type='text'
+                  name='signinEmail'
+                  placeholder='email' />
+                <br/>
+                <input
+                  type='password'
+                  name='signinPassword'
+                  placeholder='Password' />
+                <br/>
+              </select>
+            </label>
           </form>
         </div>
       </div>
