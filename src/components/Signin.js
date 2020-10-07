@@ -5,8 +5,8 @@ import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import Layout from "./Layout"
 import Container from 'react-bootstrap/Container';
 import '../styles/SocialButtonList.css';
-import '../styles/index.css';
-import '../styles/login.css';
+// import '../styles/index.css';
+// import '../styles/login.css';
 
 const Signin = ({history}) => {  // history is a key router term!
 
@@ -21,32 +21,33 @@ const Signin = ({history}) => {  // history is a key router term!
     });
   }
 
+    function hideForm() {
+      // add functionality to toggle being able to see form when icon clicked
+    }
+
 
   return (
-    // <Layout>
+    <React.Fragment>
       <div>
-        <div className="btn--twitter">
-          <form onSubmit={doSignIn}>
-            <label>
-              <a type="submit"><MDBIcon icon="envelope" className="pr-1" />Sign in</a>
-              <select>
-                <input
-                  type='text'
-                  name='signinEmail'
-                  placeholder='email' />
-                <br/>
-                <input
-                  type='password'
-                  name='signinPassword'
-                  placeholder='Password' />
-                <br/>
-              </select>
-            </label>
-          </form>
-        </div>
-      </div>
-    // </Layout>
+        <form onSubmit={doSignIn}>
+          <div onClick={hideForm} className="btn--email">
+            <MDBIcon icon="envelope" className="pr-1"/>
+          </div>
+          <input
+            type='text'
+            name='signinEmail'
+            placeholder='email' />
+          <br/>
+          <input
+            type='password'
+            name='signinPassword'
+            placeholder='Password' /> 
+            <br/>
+          <button type="submit" size="sm">submit</button> 
+        </form>
+      </div> 
+    </React.Fragment>
   );
 }
 
-export default withRouter(Signin);
+export default Signin;

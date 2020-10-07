@@ -15,11 +15,10 @@ import '../styles/signinpage.css';
 const SignInPage = () => (
   <Layout>
     <div class="signinpage-container">
-      <h1>Sign In</h1>
-      <div class="btn-group-vertical" role="group" aria-label="Basic example">
+      <div class="btn__social--list" role="group" aria-label="Button group with nested dropdown">
         <button className="btn--facebook"><FacebookAuth /></button>
         <button className="btn--twitter"><TwitterAuth /></button>
-        <div><Signin /></div>
+        <button className="btn--email"><Signin /></button>
       </div>
       {/* <Signup /> */}
       {/* <Signin /> */}

@@ -19,6 +19,11 @@
   border:0px solid transparent;
 }
 
+.btn--email {
+  background-color: white;
+  border:0px solid transparent;
+}
+
 /* #55acee; twitter blue */
 
 /* .btn--twitter:hover {
