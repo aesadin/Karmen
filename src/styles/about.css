@@ -23,6 +23,24 @@
   
 }
 
+.signup-btn {
+  position: fixed;
+  bottom: 10%;
+  right: 15%;
+  color: red;
+  background-color: white;
+  padding: 8px 40px 12px 40px;
+}
+
+.signin-btn {
+  position: fixed;
+  bottom: 10%;
+  right: 28%;
+  color: red;
+  background-color: white;
+  padding: 8px 40px 12px 40px;
+}
+
 
 .content-container button {
   position: fixed;

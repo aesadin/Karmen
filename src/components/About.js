@@ -19,9 +19,11 @@ const About = () => {
           <div className="info">
             <p><em>Post, search and verify fundraisers in your community. Help raise money for a cause you care about, while helping to ensure donations are going where they were intended.</em></p>
           </div>
-          <div className= "button-group" class="btn-group" >
-            <button type="button" class="btn btn-outline"><Link to="/signup">🔴</Link></button>
-            <button type="button" class="btn btn-outline"><Link to="/signin">⚫️</Link></button>
+          <div className="signup-btn">
+            <button type="button" class="btn btn-outline"><Link to="/signup">Sign Up</Link></button>
+          </div>
+          <div className="signin-btn">
+            <button type="button" class="btn btn-outline"><Link to="/signin">Sign In</Link></button>
           </div>
         </div>
       {/* </Layout> */}
@@ -31,3 +33,8 @@ const About = () => {
 };
 
 export default withRouter(About);
+
+{/* <div className= "button-group" class="btn-group" >
+            <button type="button" class="btn btn-outline"><Link to="/signup">Sign Up</Link></button>
+            <button type="button" class="btn btn-outline"><Link to="/signin">Sign In</Link></button>
+          </div> */}
