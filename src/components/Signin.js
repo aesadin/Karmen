@@ -1,9 +1,9 @@
 import React from "react";
 import firebase from "firebase/app";
 import { withRouter } from 'react-router-dom';
+import Layout from "./Layout"
 import '../styles/SocialButtonList.css';
-// import '../styles/index.css';
-// import '../styles/login.css';
+import '../styles/login.css';
 
 const Signin = ({history}) => {  
 
@@ -22,21 +22,30 @@ const Signin = ({history}) => {
 
   return (
     <React.Fragment>
+      <Layout>
       <div className='login-content-container'>
-        <div className='email-login-content'>
+        <div className='login-content'>
         <form onSubmit={doSignIn}>
             <input
               type='text'
               name='signinEmail'
               placeholder='email' />
+              <br/>
+              <br/>
             <input
               type='password'
               name='signinPassword'
               placeholder='password' />
-            <button type='submit'>Log In</button>
+              <br/>
+              <br/>
+            <button type="submit" size="sm" class="btn btn-outline-secondary btn-sm">
+              <span class="spinner-border spinner-border-sm"></span>
+              Log In
+            </button>
           </form>
         </div>
       </div>
+      </Layout>
     </React.Fragment>
   );
 }

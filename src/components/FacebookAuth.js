@@ -35,8 +35,8 @@ class FacebookAuth extends Component {
         const token = result.credential.accessToken;
         const currentUser = result.user;
         console.log(currentUser.providerData[0].providerId);
-        console.log(provider);
-        history.push('/')
+        // console.log(provider);
+        history.push('/fund')
         // ...
       })
       .catch(function(error) {

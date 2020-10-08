@@ -35,7 +35,10 @@ const Signup = ({history}) => {  // history is a key router term!
               placeholder='Password' />
             <br/>
             <br/>
-            <button type="submit" class="btn btn-outline-danger">Sign up</button>
+            <button type="submit" size="sm" class="btn btn-outline-secondary btn-sm">
+              <span class="spinner-border spinner-border-sm"></span>
+              Sign up
+            </button>
           </form>
         </div>
       </div>
@@ -43,4 +46,4 @@ const Signup = ({history}) => {  // history is a key router term!
   );
 }
 
-export default Signup;
+export default withRouter(Signup);

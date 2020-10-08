@@ -4,7 +4,7 @@ import FundList from './FundList';
 import FundDetails from './FundDetails';
 import EditFundForm from './EditFundForm';
 import Header from "./Header";
-import Hero from "./Hero";
+import About from "./About";
 import Layout from "./Layout"
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -38,19 +38,6 @@ class AppControl extends React.Component {
       });
     }
 
-    handleAddVerify = () => {
-
-      // const currentUser = firebase.auth().currentUser;
-      // if (currentUser.providerData[0].providerId != null) {
-      //   // this.setState({fundVerified: true})
-      //   return 
-      //   console.log("you did it!")
-      // } else {
-      //   alert("Sorry, you're not authorized to verify!")
-      //   console.log("nope!");
-      // }
-
-    }
 
     handleDeletingFund = (id) => {
       this.props.firestore.delete({collection: 'fundraisers', doc: id});
@@ -82,6 +69,7 @@ class AppControl extends React.Component {
     }
 
     render(){
+      const currentUser = firebase.auth();
       const auth = this.props.firebase.auth(); 
       if (!isLoaded(auth)) {
         return (
@@ -94,15 +82,11 @@ class AppControl extends React.Component {
       }
       if ((isLoaded(auth)) && (auth.currentUser == null)) {
         return (
-          <Layout>
-            <div className="landing-pg-control">
-              <h1 className="landing-pg">Karmen</h1>
-            </div>
-          </Layout>
+          <About />
         )
       } 
         // formSubmissionHandler from reusable form
-      if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      if ((isLoaded(auth)) && (auth.currentUser != null) || (currentUser != null)) {
 
         let currentlyVisibleState = null;
         if (this.state.visibleOnPage === "editing") { // if we are editing then show the edit fund form
@@ -112,11 +96,11 @@ class AppControl extends React.Component {
         } else if (this.state.visibleOnPage === "addFund") { // 
           currentlyVisibleState = <AddFundForm onFundCreation = {this.handleAddingFund} />
         } else { // otherwise show the list of fundraisers
-          currentlyVisibleState = <FundList onFundSelection = {this.handleChangingSelectedFund} onAddFundClick = {this.handleAddClick} onVerifyClick = {this.handleAddVerify}/>
+          currentlyVisibleState = <FundList onFundSelection = {this.handleChangingSelectedFund} onAddFundClick = {this.handleAddClick} />
         }
         return (
           <Layout>
-            <div className="app-control">
+            <div>
               {currentlyVisibleState}
             </div>
           </Layout>

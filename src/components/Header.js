@@ -15,17 +15,17 @@ function Header() {
   if (auth.currentUser != null) {
     currentlyVisibleLink = <Link to="/logout"> Sign out</Link>
   } else {
-    currentlyVisibleLink = <Link to="/signin"> Sign in</Link>
+    currentlyVisibleLink = null
   }
 
 
   return (
     <React.Fragment>
       <div className="header-grid-layout">
-        <p><Link to="/">Home</Link></p>
+        <p><button><Link to="/fund">Home</Link></button></p>
+        <p>{currentlyVisibleLink}</p>
         <p><button className="btn--facebook"><FacebookAuth /></button></p>
         <p><button className="btn--twitter"><TwitterAuth /></button></p>
-        <p>{currentlyVisibleLink}</p>
       </div>
     </React.Fragment>
   );

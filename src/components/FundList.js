@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import Fund from "./Fund";
 import { useSelector } from 'react-redux'
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
+import '../styles/index.css';
+import '../styles/login.css';
 
 function FundList(props){
   useFirestoreConnect([
@@ -29,10 +31,9 @@ function FundList(props){
             </div>
           })}
           </div>
-          <div className='footer'>
+          <div className='list'>
             <p><button onClick={props.onAddFundClick}>Add Fundraiser</button></p>
           </div>
-
       </React.Fragment>
     );
   } else {
