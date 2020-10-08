@@ -7,7 +7,7 @@ import '../styles/SocialButtonList.css';
 
 const TwitterIcon = () => {
   return (
-    <IconContext.Provider value={{ style: {fontSize: '30px', color: "rgb(0, 123, 255)"}}}>
+    <IconContext.Provider value={{ style: {fontSize: '20px', color: "rgb(81, 158, 230)"}}}>
         <div className="btn--twitter">
           <FaTwitter />
         </div>

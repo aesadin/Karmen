@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import firebase from "firebase/app";
 import FacebookAuth from "./FacebookAuth";
 import Layout from "./Layout"
+import { withRouter } from 'react-router-dom';
 import '../styles/index.css';
 import '../styles/logout.css';
 
@@ -30,4 +31,4 @@ function Logout() {
     )
 }
 
-export default Logout;
+export default withRouter(Logout);

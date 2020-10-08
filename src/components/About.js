@@ -1,23 +1,25 @@
 import React from 'react';
-import Hero from './Hero'
+import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import Layout from '../containers/Layout';
+
+import Layout from './Layout';
 
 const About = () => {
   return (
     <Layout>
-      <h2>About</h2>
-      <p>
-        Bacon ipsum dolor amet tail landjaeger corned beef chuck hamburger,
-        salami strip steak. Pancetta kielbasa ham hock andouille. Tail cupim
-        burgdoggen salami bacon jerky shankle strip steak turkey. Drumstick
-        shoulder pork loin, filet mignon cupim alcatra tongue jowl. Cupim
-        tenderloin rump t-bone. Picanha turducken short loin jowl, landjaeger
-        shoulder t-bone buffalo spare ribs salami pastrami tri-tip ground round
-        alcatra.
-      </p>
+      <React.Fragment>
+      <div>
+          <h1>Karmen</h1>
+          <div>
+            <p>blah blah</p>
+            <button><Link to="/signup">Sign Up</Link></button>
+            <button><Link to="/signin">Sign In</Link></button>
+          </div>
+      </div>
+    </React.Fragment>
     </Layout>
   );
 };
 
-export default About;
+export default withRouter(About);

@@ -7,6 +7,7 @@ function Hero() {
     'position': 'fixed',
     'top': 0, 
     'left': 0,
+    'background-color': white,
     'min-width': '100%',
     'min-height': '100%' 
   `;

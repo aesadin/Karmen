@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import firebase from "firebase/app";
+import FacebookAuth from "./FacebookAuth";
+import TwitterAuth from "./TwitterAuth";
+import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
+import '../styles/SocialButtonList.css';
 import '../styles/header.css';
 import '../styles/index.css';
 
@@ -18,9 +22,10 @@ function Header() {
   return (
     <React.Fragment>
       <div className="header-grid-layout">
-        <p><button><Link to="/">Home</Link></button></p>
-        <p><button><Link to="/Signup">About</Link></button></p>
-        <p><button>{currentlyVisibleLink}</button></p>
+        <p><Link to="/">Home</Link></p>
+        <p><button className="btn--facebook"><FacebookAuth /></button></p>
+        <p><button className="btn--twitter"><TwitterAuth /></button></p>
+        <p>{currentlyVisibleLink}</p>
       </div>
     </React.Fragment>
   );

@@ -1,12 +1,14 @@
 p {
-  font-size: 10px;
-  position: center;
+  font-size: 9px;
+  bottom: 0;
+  
 }
 
-footer {
+.footer {
   bottom: 0;
   margin: auto;
   width: 100%;
   position: fixed;
+  background-color: white;
   
 }

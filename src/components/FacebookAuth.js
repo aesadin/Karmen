@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from "firebase/app";
 import { withRouter } from 'react-router-dom';
+import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import FacebookIcon from "./FacebookIcon"
 import { useHistory } from "react-router-dom";
 import '../styles/fbloginbutton.css';
@@ -50,7 +51,7 @@ class FacebookAuth extends Component {
     return (
       <div>
         <div onClick={this.handleLogin} >
-        <FacebookIcon />
+          <FacebookIcon />
         </div>
       </div> 
     );

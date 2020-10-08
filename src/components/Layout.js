@@ -18,12 +18,12 @@ const defaultProps = {
 const Layout = ({ children, contentCenter }) => { // add Header component here instead of this boring header?
   return (
     <React.Fragment>
-      <div class="header">
+      <div >
         <Header />
       </div>
       <main className={contentCenter ? 'content-center' : ''}>{children}</main>
-      <div class="footer">
-      <Footer />
+      <div>
+        <Footer />
       </div>
     </React.Fragment>
   );

@@ -11,12 +11,18 @@
 .btn--facebook {
   background-color: white;
   border:0px solid transparent;
+  padding: 0;
+}
+
+.email-login-content {
+  background-color: transparent;
 }
 
 
 .btn--twitter {
-  background-color: white;
+  background-color: rgb(81, 158, 230);
   border:0px solid transparent;
+  padding: 0;
 }
 
 .btn--email {

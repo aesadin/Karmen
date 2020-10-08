@@ -6,6 +6,7 @@ import EditFundForm from './EditFundForm';
 import Header from "./Header";
 import Hero from "./Hero";
 import Layout from "./Layout"
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import firebase from "firebase/app";
