@@ -3,11 +3,11 @@
   padding: 1em 4em;
   display: flex;
   flex-direction: column;
-  width: 50vw;
-  height: 50vh;
+  width: 60vw;
+  height: 60vh;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 30px red;
 }
 
 .form-styles-container {
@@ -17,4 +17,9 @@
   flex-direction: center;
   justify-content: center;
   align-items: center;
+  padding: 2em;
+}
+
+.include {
+  font-size: 14px;
 }

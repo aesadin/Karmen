@@ -16,6 +16,7 @@ function FundList(props){
   if(isLoaded(fundraisers)) {
     return (
       <React.Fragment>
+        <div className="content-page">
           <div className="fund-grid-layout">
           {fundraisers.map((fund) => {
             return <div className='fund'>
@@ -29,11 +30,12 @@ function FundList(props){
             id={fund.id}
             key={fund.id}/>
             </div>
-          })}
+            })}
           </div>
-          <div className='list'>
-            <p><button size="sm" onClick={props.onAddFundClick}>Add Fundraiser</button></p>
-          </div>
+            <div className='list'>
+              <p><button class="btn btn-outline-danger btn-sm" onClick={props.onAddFundClick}>Add Fundraiser</button></p>
+            </div>
+        </div>
       </React.Fragment>
     );
   } else {

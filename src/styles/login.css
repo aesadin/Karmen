@@ -21,6 +21,10 @@
   justify-content: center;
 }
 
+.list {
+  align-items: center;
+}
+
 input {
   margin: .2em;
   border: 1px solid red;

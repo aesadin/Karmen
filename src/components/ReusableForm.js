@@ -28,14 +28,17 @@ function ReusableForm(props) {
             name='url'
             placeholder='https://example.com' />
             <br/>
-            <p>Include Important Instructions or Alerts Below</p>
+            <br/>
+            <p><span className="include">Include Important Instructions or Alerts Below</span></p>
             <br/>
             <br/>
             <input 
             type='text'
             name='alert'
             placeholder='Alerts or Instructions' />
-          <button type='submit'>{props.buttonText}</button>
+            <br />
+            <br />
+          <button size="sm" class="btn btn-outline-secondary" type='submit'>{props.buttonText}</button>
         </form>
       </div>
     </React.Fragment>

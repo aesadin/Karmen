@@ -34,7 +34,3 @@ const About = () => {
 
 export default withRouter(About);
 
-{/* <div className= "button-group" class="btn-group" >
-            <button type="button" class="btn btn-outline"><Link to="/signup">Sign Up</Link></button>
-            <button type="button" class="btn btn-outline"><Link to="/signin">Sign In</Link></button>
-          </div> */}
