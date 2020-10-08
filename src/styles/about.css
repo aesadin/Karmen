@@ -1,0 +1,46 @@
+.content-container {
+  background-color: white;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.content-container h1 {
+  margin: 0;
+  padding: 0;
+  color: red;
+  position: fixed;
+  top: 35%;
+  left: 28%;
+  font-size: 120px;
+
+}
+
+.content-container span {
+  font-family: 'Ribeye Marrow' !important;
+  font-size: 140px;
+  
+}
+
+
+.content-container button {
+  position: fixed;
+  background-color: white;
+  padding: 8px 40px 12px 40px;
+  
+  
+}
+
+
+
+.content-container p {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  position: fixed;
+  text-align: center;
+  top: 60%;
+  margin-left: 10%;
+  margin-right: 10%;
+  
+}

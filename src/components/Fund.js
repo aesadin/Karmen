@@ -40,6 +40,7 @@ const Fund = (props) => {
                 <hr/>
                 <a href={props.url}>Link to Fundraiser</a>
                 <hr/>
+                <p><em>{props.alert}</em></p>
                 <div>
                   <p><button onClick={doVerify} type="submit" class="btn btn-outline-primary btn-sm">Verify</button></p>
                   {currentlyVisible}
@@ -56,8 +57,8 @@ Fund.propTypes = {
   city: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
-  // verified: PropTypes.string,
-  // whenVerifyClicked: PropTypes.func
+  alert: PropTypes.string
+  
 }
 
 export default Fund;

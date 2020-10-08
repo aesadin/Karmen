@@ -28,6 +28,13 @@ function ReusableForm(props) {
             name='url'
             placeholder='https://example.com' />
             <br/>
+            <p>Include Important Instructions or Alerts Below</p>
+            <br/>
+            <br/>
+            <input 
+            type='text'
+            name='alert'
+            placeholder='Alerts or Instructions' />
           <button type='submit'>{props.buttonText}</button>
         </form>
       </div>

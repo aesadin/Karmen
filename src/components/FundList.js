@@ -20,11 +20,11 @@ function FundList(props){
           {fundraisers.map((fund) => {
             return <div className='fund'>
               <Fund
-            whenVerifyClicked = {props.onVerifyClick}
             fundTitle={fund.fundTitle}
             city={fund.city}
             description={fund.description}
             url={fund.url}
+            alert={fund.alert}
             verified={fund.verified}
             id={fund.id}
             key={fund.id}/>
@@ -32,7 +32,7 @@ function FundList(props){
           })}
           </div>
           <div className='list'>
-            <p><button onClick={props.onAddFundClick}>Add Fundraiser</button></p>
+            <p><button size="sm" onClick={props.onAddFundClick}>Add Fundraiser</button></p>
           </div>
       </React.Fragment>
     );

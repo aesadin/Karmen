@@ -24,7 +24,7 @@ function Logout() {
         <div className='logout-content-container'>
           <div className='logout-content'>
           <h1>Sign Out</h1>
-          {loggedIn ? <button onClick={doSignOut} type="submit">Sign out</button> : <h4>You have successfully signed out!</h4>}
+          {loggedIn ? <button onClick={doSignOut} type="submit"><span className="btn-signout">Sign out</span></button> : <h4>You have successfully signed out!</h4>}
           </div>
         </div>
       </Layout>

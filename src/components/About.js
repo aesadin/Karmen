@@ -5,27 +5,27 @@ import { Dropdown } from 'react-bootstrap';
 import { NavItem } from "react-bootstrap";
 import { NavLink } from "react-bootstrap/";
 import Layout from './Layout';
+import Header from './Header';
+import Footer from './Footer';
+import '../styles/about.css';
 
 const About = () => {
   return (
     <React.Fragment>
-      <Layout>
-        <div>
-            <h1>Karmen</h1>
-            <div>
-              <p>blah blah</p>
-            </div>
-            <div>
-              <Dropdown as={NavItem}>
-                <Dropdown.Toggle as={NavLink}></Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item><Link to="/signup">Sign Up</Link></Dropdown.Item>
-                  <Dropdown.Item><Link to="/signin">Sign In</Link></Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
+      {/* <Layout> */}
+      <Header />
+        <div className="content-container">
+          <h1><span>K</span>armen</h1>
+          <div className="info">
+            <p><em>Post, search and verify fundraisers in your community. Help raise money for a cause you care about, while helping to ensure donations are going where they were intended.</em></p>
+          </div>
+          <div className= "button-group" class="btn-group" >
+            <button type="button" class="btn btn-outline"><Link to="/signup">🔴</Link></button>
+            <button type="button" class="btn btn-outline"><Link to="/signin">⚫️</Link></button>
+          </div>
         </div>
-      </Layout>
+      {/* </Layout> */}
+      <Footer/>
     </React.Fragment>
   );
 };
