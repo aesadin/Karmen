@@ -22,7 +22,9 @@
 }
 
 .list {
-  align-items: center;
+  position: fixed;
+  padding-left: 32%;
+  background-color: white;
 }
 
 input {

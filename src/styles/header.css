@@ -2,14 +2,15 @@
   .header-grid-layout {
     display: grid;
     grid-template-columns: 80% 1fr 1fr 1fr;
-    grid-template-rows: 12vh;
+    grid-template-rows: 7vh;
     align-items: center;
     padding: 0 1em;
-    border-bottom: 1px solid #005450;
+    border-bottom: 1px solid #011b1a;
     background-color: white;
+    padding-top: 1%;
   }
 
-  
+
 
 
   

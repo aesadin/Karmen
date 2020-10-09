@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Fund from "./Fund";
 import { useSelector } from 'react-redux'
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
-import '../styles/index.css';
+// import '../styles/index.css';
 import '../styles/login.css';
 
 function FundList(props){
@@ -32,10 +32,10 @@ function FundList(props){
             </div>
             })}
           </div>
-            <div className='list'>
-              <p><button class="btn btn-outline-danger btn-sm" onClick={props.onAddFundClick}>Add Fundraiser</button></p>
-            </div>
         </div>
+          <div className='list'>
+            <button class="btn btn-outline-danger btn-sm" onClick={props.onAddFundClick}>Add Fundraiser</button>
+          </div>
       </React.Fragment>
     );
   } else {

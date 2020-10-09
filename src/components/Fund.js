@@ -42,7 +42,7 @@ const Fund = (props) => {
                 <hr/>
                 <p><em>{props.alert}</em></p>
                 <div>
-                  <p><button onClick={doVerify} type="submit" class="btn btn-outline-primary btn-sm">Verify</button></p>
+                  <p><button onClick={doVerify} type="submit" class="btn btn-outline-danger btn-sm">Verify</button></p>
                   {currentlyVisible}
                   {/* {hidden ? <p></p> : <p>{currentlyVisible}</p>} */}
                 </div>

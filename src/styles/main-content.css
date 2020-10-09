@@ -30,7 +30,7 @@ a {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 45vh 45vh 45vh 45vh 45vh 45vh;
   width: 75vw;
-  height: 75vh;
+  height: 80vh;
   overflow: scroll; 
   background-color: white;
   
@@ -59,7 +59,7 @@ a {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   border-radius: .6em;
   padding: 1em;
-  box-shadow: 2px 2px 4px red;
+  box-shadow: 2px 2px 4px rgb(245, 197, 197);
   
 }
 
