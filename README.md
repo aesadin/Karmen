@@ -92,7 +92,7 @@ Using firebase I am able to use their authentication feature with twitter and fa
 
 Clone The Project
 
-1.  Navigate to the [Karmen respository](https://github.com/aesadin/Karmen.git) and copy the project's URL.
+1.  Navigate to the [Karmen respository](https://github.com/aesadin/Karmen2.git) and copy the project's URL.
 
 2. Clone this project using the GitHub command:
 `$ git clone https://github.com/allison-sadin/karmen.git`
