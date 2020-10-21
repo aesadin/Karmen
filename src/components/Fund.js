@@ -1,63 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 import PropTypes from "prop-types";
 import firebase from "firebase/app";
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
 import '../styles/main-content.css';
 
+// THIS NEEDS TO BE A CLASS FUNCTION I THINK
 
 const Fund = (props) => {
-// show function doesnt work
-  // const [hidden, setHidden] = useState(true) // maybe use a verified, setVerified hook?
-  
+
+  // const [user, setUser] = useState({});
+  // const user = firebase.auth().currentUser;
   let currentlyVisible;
   
+  useEffect(() => {
+    (async () => {
+      const user = await firebase.auth().currentUser;
+      console.log(user);
+      // setUser(user);
+      if (user.providerData[0].providerId == "facebook.com" || user.providerData[0].providerId == "twitter.com" ) {
+        currentlyVisible = <p>&#11088</p>;
+        
+      } else {
+        currentlyVisible = null
+      }
+      console.log(currentlyVisible)
+    })();
+  }, []);
 
-  const doVerify = (event) => {
-    event.preventDefault();
-    const currentUser = firebase.auth().currentUser;
-    if (currentUser.providerData[0].providerId == "facebook.com" || currentUser.providerData[0].providerId == "twitter.com" ) {
-      // setHidden(!hidden)
-      currentlyVisible = <p>&#11088;</p>
-      
-    } else {
-      currentlyVisible = null
-    }
-    console.log(currentlyVisible)
-    
-  }
   
-
   
     return(
+      <div className='fund'>
         <Card className="scroll-card">
             <Card.Body>
               <Card.Title>{props.fundTitle}</Card.Title>
               <Card.Subtitle><em>{props.city}</em></Card.Subtitle>
-              <hr/>
-              <Card.Text>
-                <b>Description:</b> {props.description}
+            <hr/>
+                <p><b>Description: </b> {props.description}</p>
                 <hr/>
                 <a href={props.url}>Link to Fundraiser</a>
-                <hr/>
+              <hr/>
                 <p><em>{props.alert}</em></p>
-                <div>
-                  <p><button onClick={doVerify} type="submit" class="btn btn-outline-danger btn-sm">Verify</button></p>
-                  {currentlyVisible}
-                  {/* {hidden ? <p></p> : <p>{currentlyVisible}</p>} */}
-                </div>
-              </Card.Text>
+              
+              <div>
+                <p><button onClick={useEffect} type="submit" class="btn btn-outline-danger btn-sm">Verify</button></p>
+                {currentlyVisible}
+                {/* {hidden ? <p></p> : <p>{currentlyVisible}</p>} */}
+              </div>
             </Card.Body>
         </Card>
+      </div>
     );
-}
+};
 
 Fund.propTypes = {
   fundTitle: PropTypes.string,
   city: PropTypes.string,
   description: PropTypes.string,
   url: PropTypes.string,
-  alert: PropTypes.string
+  alert: PropTypes.string,
+  verified: PropTypes.string
   
 }
 

@@ -19,8 +19,9 @@ function FundList(props){
         <div className="content-page">
           <div className="fund-grid-layout">
           {fundraisers.map((fund) => {
-            return <div className='fund'>
+            return (
               <Fund
+            // whenVerifyClicked = {props.onFundVerify}
             fundTitle={fund.fundTitle}
             city={fund.city}
             description={fund.description}
@@ -29,7 +30,7 @@ function FundList(props){
             verified={fund.verified}
             id={fund.id}
             key={fund.id}/>
-            </div>
+            );
             })}
           </div>
         </div>
