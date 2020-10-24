@@ -38,8 +38,8 @@ const Signin = ({history}) => {
               placeholder='password' />
               <br/>
               <br/>
-            <button type="submit" size="sm" class="btn btn-outline-secondary btn-sm">
-              <span class="spinner-border spinner-border-sm"></span>
+            <button type="submit" size="sm" className="btn btn-outline-secondary btn-sm">
+              <span className="spinner-border spinner-border-sm"></span>
               Log In
             </button>
           </form>

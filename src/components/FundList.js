@@ -35,7 +35,7 @@ function FundList(props){
           </div>
         </div>
           <div className='list'>
-            <button class="btn btn-outline-danger btn-sm" onClick={props.onAddFundClick}>Add Fundraiser</button>
+            <button className="btn btn-outline-danger btn-sm" onClick={props.onAddFundClick}>Add Fundraiser</button>
           </div>
       </React.Fragment>
     );

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import firebase from "firebase/app";
-import { withRouter } from 'react-router-dom';
-import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import FacebookIcon from "./FacebookIcon"
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 import '../styles/fbloginbutton.css';
 import '../styles/SocialButtonList.css';
 import "firebase/auth";
@@ -24,13 +23,14 @@ class FacebookAuth extends Component {
   }
 
 
-  handleLogin({history}) {
+  handleLogin = async ({history}) => {
     const provider = new firebase.auth.FacebookAuthProvider();
+    const user = await axios.get(provider)
     const userBirthday = provider.addScope('user_birthday');
     // provider.addScope('user_photoURL');
     firebase
       .auth()
-      .signInWithPopup(provider)
+      .signInWithPopup(user)
       .then(function(result) {
         const token = result.credential.accessToken;
         const currentUser = result.user;

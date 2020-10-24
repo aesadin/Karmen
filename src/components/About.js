@@ -12,21 +12,19 @@ import '../styles/about.css';
 const About = () => {
   return (
     <React.Fragment>
-      {/* <Layout> */}
-      <Header />
+      {/* <Header /> */}
         <div className="content-container">
           <h1><span>K</span>armen</h1>
           <div className="info">
             <p><em>Post, search and verify fundraisers in your community. Help raise money for a cause you care about, while helping to ensure donations are going where they were intended.</em></p>
           </div>
           <div className="signup-btn">
-            <button type="button" class="btn btn-outline"><Link to="/signup">Sign Up</Link></button>
+            <button type="button" className="btn btn-outline"><Link to="/signup">Sign Up</Link></button>
           </div>
           <div className="signin-btn">
-            <button type="button" class="btn btn-outline"><Link to="/signin">Sign In</Link></button>
+            <button type="button" className="btn btn-outline"><Link to="/signin">Sign In</Link></button>
           </div>
         </div>
-      {/* </Layout> */}
       <Footer/>
     </React.Fragment>
   );

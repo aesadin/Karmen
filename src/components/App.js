@@ -20,11 +20,8 @@ function App (){
       <Route path="/signin">
         <Signin />
       </Route>
-      <Route path="/fund">
-        <AppControl />
-      </Route>
       <Route path="/">
-        <About />
+        <AppControl />
       </Route>
     </Switch>
   </BrowserRouter>
