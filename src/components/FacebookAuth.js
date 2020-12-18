@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import firebase from "firebase/app";
 import FacebookIcon from "./FacebookIcon"
-import { useHistory } from "react-router-dom";
-import axios from "axios";
+import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../styles/fbloginbutton.css';
 import '../styles/SocialButtonList.css';
 import "firebase/auth";
@@ -11,46 +11,45 @@ class FacebookAuth extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      token: "",
-      currentUser: null,
-      message: "",
-    };
+    // this.state = {
+    //   token: "",
+    //   currentUser: null,
+    //   message: "",
+    // };
 
-    if (!firebase.apps.length) {
-      firebase.initializeApp(this.props.firebaseConfig);
-    }
+    // if (!firebase.apps.length) {
+    //   firebase.initializeApp(this.props.firebaseConfig);
+    // }
   }
 
 
-  handleLogin = async ({history}) => {
+  handleFbLogin() {
+    // let history = useHistory();
     const provider = new firebase.auth.FacebookAuthProvider();
-    const user = await axios.get(provider)
-    const userBirthday = provider.addScope('user_birthday');
-    // provider.addScope('user_photoURL');
+  
     firebase
       .auth()
-      .signInWithPopup(user)
+      .signInWithPopup(provider)
       .then(function(result) {
         const token = result.credential.accessToken;
         const currentUser = result.user;
         console.log(currentUser.providerData[0].providerId);
-        // console.log(provider);
-        history.push('/fund')
-        // ...
+        // history.push('/fund')
       })
+    
       .catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.email;
+        const credential = error.credential;
         // ...
       });
+      // history.push('/fund')
   }
   render() {
     return (
       <div>
-        <div onClick={this.handleLogin} >
+        <div onClick={this.handleFbLogin} >
           <FacebookIcon />
         </div>
       </div> 
@@ -58,6 +57,5 @@ class FacebookAuth extends Component {
   }
 }
 
-export default FacebookAuth;
+export default withRouter(FacebookAuth);
 
-//<span>Sign in with Facebook</span>

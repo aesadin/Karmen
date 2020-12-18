@@ -2,8 +2,21 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /{document=**} {
-      allow read, write: if
-          request.time < timestamp.date(2020, 10, 26);
+      allow read;
+      allow write: if isAdmin();
+      allow create: if request.auth != null;
+      allow delete: if isPostOwner();
+      allow update: if isPostOwner() &&
+      request.resource.data.url == resource.data.url;
+
+      function isPostOwner() {
+          return resource.data.userId == request.auth.uid;
+      }
+      
+      function isAdmin() {
+        return request.auth.uid == "ADMIN";
+      }
+      
     }
   }
 }

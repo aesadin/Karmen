@@ -4,7 +4,7 @@ import FacebookAuth from "./FacebookAuth";
 import Layout from "./Layout"
 import { withRouter } from 'react-router-dom';
 import '../styles/index.css';
-import '../styles/logout.css';
+import '../styles/Logout.css';
 
 function Logout() {
 

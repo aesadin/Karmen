@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import firebase from "firebase/app";
 import TwitterIcon from "./TwitterIcon"
-import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
-import { withRouter } from 'react-router-dom';
 import '../styles/twitterloginbutton.css';
 import "firebase/auth";
 
@@ -10,52 +8,50 @@ class TwitterAuth extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      token: "",
-      currentUser: null,
-      message: "",
-    };
+    // this.state = {
+    //   token: "",
+    //   currentUser: null,
+    //   message: "",
+    // };
 
 
-    if (!firebase.apps.length) {
-      firebase.initializeApp(this.props.firebaseConfig);
-    }
+    // if (!firebase.apps.length) {
+    //   firebase.initializeApp(this.props.firebaseConfig);
+    // }
   }
 
-  handleLogin() {
-    var provider = new firebase.auth.TwitterAuthProvider();
+  handleTwitterLogin() {
+    const provider = new firebase.auth.TwitterAuthProvider();
     firebase
       .auth()
       .signInWithPopup(provider)
-      .then(function(result) {
-        var token = result.credential.accessToken;
-        var user = result.user;
+      .then((result) => {
+        const token = result.credential.accessToken;
+        const user = result.user;
+        console.log(user.providerData[0].displayName)
         console.log(user);
         // ...
       })
-      .catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.email;
+        const credential = error.credential;
         // ...
       });
+      // history.push('/fund')
   }
+  
   render() {
     return (
       <div>
-        <div onClick={this.handleLogin}>
+        <div onClick={this.handleTwitterLogin}>
           <TwitterIcon />
         </div>
       </div>
     );
   }
-}
+};
 
 export default TwitterAuth;
 
-{/* <div class="login-content-container-for-twitter">
-        <a onClick={this.handleLogin}>
-          <TwitterIcon />
-        </a>
-      </div> */}

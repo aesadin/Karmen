@@ -11,9 +11,9 @@ import '../styles/index.css';
 function Header() {
 
   const auth = firebase.auth();
-  let currentlyVisibleLink = null;
+  let currentlyVisibleLink;
   if (auth.currentUser != null) {
-    currentlyVisibleLink = <Link to="/logout"> Sign out</Link>
+    currentlyVisibleLink = <Link to="./Logout"><span className="btn-home">Sign out</span></Link>
   } else {
     currentlyVisibleLink = null
   }
@@ -23,7 +23,7 @@ function Header() {
     <React.Fragment>
       <div className="header-grid-layout">
         <Link to="/fund"><span className="btn-home">Home</span></Link>
-        <p>{currentlyVisibleLink}</p>
+        <div>{currentlyVisibleLink}</div>
         <p><button className="btn--facebook"><FacebookAuth /></button></p>
         <p><button className="btn--twitter"><TwitterAuth /></button></p>
       </div>

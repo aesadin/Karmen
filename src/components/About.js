@@ -12,7 +12,6 @@ import '../styles/about.css';
 const About = () => {
   return (
     <React.Fragment>
-      {/* <Header /> */}
         <div className="content-container">
           <h1><span>K</span>armen</h1>
           <div className="info">

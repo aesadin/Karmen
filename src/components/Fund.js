@@ -2,8 +2,12 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import PropTypes from "prop-types";
 import firebase from "firebase/app";
-import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'
+import TwitterIcon from "./TwitterIcon"
+import FacebookIcon from "./FacebookIcon"
+import { Grid, Row, Col } from 'react-bootstrap'
 import '../styles/main-content.css';
+import '../styles/twitterloginbutton.css';
+import '../styles/SocialButtonList.css';
 
 // THIS NEEDS TO BE A CLASS FUNCTION I THINK OR FUNCTION WITH HOOKS
 
@@ -11,31 +15,50 @@ class Fund extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      verified: "",
+      userImage: null
+    }
 
+    this.facebookProvider = new firebase.auth.FacebookAuthProvider();
+    this.twitterProvider = new firebase.auth.TwitterAuthProvider();
   };
 
-  verifyUser() {
-    console.log("you did it")
-  }
+  handleFbLogin = () => {
+    
+    firebase
+      .auth()
+      .signInWithPopup(this.facebookProvider)
+      .then(function(result) {
+        const token = result.credential.accessToken;
+        const currentUser = result.user;
+        console.log(currentUser.providerData[0].providerId);
+        // history.push('/fund')
+      })
+    
+      .catch(function(error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.email;
+        const credential = error.credential;
+        // ...
+      });
 
-  // const [user, setUser] = useState({});
-  // const user = firebase.auth().currentUser;
-  // let currentlyVisible;
+      let user = firebase.auth().currentUser;
+      if (user.providerData[0].providerId === "facebook.com" || user.providerData[0].providerId === "twitter.com"){
+        return this.setState({
+          verified: 'Verrified By: ' + `${user.providerData[0].displayName}`,
+          userImage: `${user.providerData[0].photoURL}`
+        });
+      } else {
+        return this.setState({
+          verified: "",
+          userImage: null
+        });
+      }
+  }
   
-  // useEffect(() => {
-  //   (async () => {
-  //     const user = await firebase.auth().currentUser;
-  //     console.log(user);
-  //     // setUser(user);
-  //     if (user.providerData[0].providerId == "facebook.com" || user.providerData[0].providerId == "twitter.com" ) {
-  //       currentlyVisible = <p>&#11088</p>;
-        
-  //     } else {
-  //       currentlyVisible = null
-  //     }
-  //     console.log(currentlyVisible)
-  //   })();
-  // }, []);
+
 
   render() {
     return (
@@ -50,12 +73,29 @@ class Fund extends React.Component {
                 <a href={this.props.url}>Link to Fundraiser</a>
               <hr/>
                 <p><em>{this.props.alert}</em></p>
-              
-              <div>
-                <p><button onClick={e => e.this.verifyUser} type="submit" className="btn btn-outline-danger btn-sm">Verify</button></p>
-                {/* {currentlyVisible} */}
-                {/* {hidden ? <p></p> : <p>{currentlyVisible}</p>} */}
-              </div>
+              <hr/>
+              <h5>
+                Verify This Fund
+              </h5>
+                <Row className="show-grid">
+                  <Col md={3}>
+                    <button onClick={this.handleFbLogin} className=" btn--facebook">
+                      <TwitterIcon />
+                    </button>
+                  </Col>
+                  <Col md={3}>
+                    <button onClick={this.handleFbLogin} className=" btn--facebook">
+                      <FacebookIcon />
+                    </button>
+                  </Col>
+                </Row>
+                <br/>
+                <div>
+                  <p>{this.state.verified}</p>
+                </div>
+                <div>
+                  <img src={this.state.userImage} />
+                </div>
             </Card.Body>
         </Card>
       </div>
@@ -63,14 +103,6 @@ class Fund extends React.Component {
   }   
 }
 
-// Fund.propTypes = {
-//   fundTitle: PropTypes.string,
-//   city: PropTypes.string,
-//   description: PropTypes.string,
-//   url: PropTypes.string,
-//   alert: PropTypes.string,
-//   verified: PropTypes.string
-  
-// }
+
 
 export default Fund;
